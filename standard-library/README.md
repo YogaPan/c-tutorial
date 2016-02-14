@@ -13,6 +13,9 @@ snprintf(char *str, size_t size, const char *fmt, ...);
 int
 sscanf(const char *str, const char *fmt, ...);
 
+```
+
+```C
 #include <string.h>
 
 size_t
@@ -79,6 +82,9 @@ for (char *p = strtok(s, " "); p != NULL; p = strtok(NULL, " "))
 ```C
 #include <string.h>
 /* TODO */
+```
+
+```C
 #include <stdlib.h>
 /* TODO */
 ```

@@ -99,11 +99,16 @@ chdir("the other directory");
 fchdir(cwd_fd);
 close(cwd_fd);
 
+```
+
+```C
 #include <sys/stat.h>
 
 int
 mkdir(const char *pathname, mode_t mode);
+```
 
+```C
 #include <dirent.h>
 
 struct dirent {
