@@ -42,7 +42,7 @@ S_IRWXO     /* 00007 */
 
 /* Usage example */
 fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH );
-fd = creat(filename, 0755)
+fd = creat(filename, 0755);
 ```
 
 ## Read, write, redirect and close file
@@ -58,6 +58,13 @@ read(int fildes, void *buf, size_t nbyte);
 
 ssize_t
 write(int fildes, const void *buf, size_t nbyte);
+
+off_t
+lseek(int fildes, off_t offset, int whence);
+/* whence */
+SEEK_SET  /* If whence is SEEK_SET, the offset is set to offset bytes. */
+SEEK_CUR  /* If whence is SEEK_CUR, the offset is set to its current location plus offset bytes. */
+SEEK_END  /* If whence is SEEK_END, the offset is set to the size of the file plus offset bytes. */
 
 int
 dup(int fildes);
@@ -226,16 +233,23 @@ sleep(unsigned int second);
 
 int
 pthread_create(pthread_t *thread, const pthread_attr_t *attr,
-               void *(*start_routine)(void *), void *arg)
+               void *(*start_routine)(void *), void *arg);
 
 int
-pthread_join(pthread_t thread, void **value_ptr)
+pthread_join(pthread_t thread, void **value_ptr);
 
 ```
 
 ## Signal
 ```C
 #include <signal.h>
+/* TODO */
+```
+
+
+## Time
+```C
+#include <sys/time.h>
 /* TODO */
 ```
 
