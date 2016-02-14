@@ -151,15 +151,7 @@ int close(sockfd);
 ```
 
 ## Create server workflow
-```C
-
-getaddrinfo();
-socket();
-bind();
-listen();
-accept();
-
-```
+getaddrinfo() -> socket() -> bind() -> listen() -> accept() -> close
 
 ## Make sure your port can use
 ```C

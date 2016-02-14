@@ -12,13 +12,13 @@ creat(const char *path, mode_t mode);
 /* creat(path, mode) is the same as open(path, O_CREAT | O_TRUNC | O_WRONLY, mode) */
 
 /* flag options */
-O_RDONLY  /* Read only */
-O_WRONLY  /* Write only */
-O_RDWR    /* Read and Write */
+O_RDONLY    /* Read only */
+O_WRONLY    /* Write only */
+O_RDWR      /* Read and Write */
 
-O_CREAT   /* If not exists, then create file */
-O_APPEND  /* Append */
-O_TRUNC   /* If file existed, then replace this file. */
+O_CREAT     /* If not exists, then create file */
+O_APPEND    /* Append */
+O_TRUNC     /* If file existed, then replace this file. */
 
 /* mode macros */
 S_ISUID     /* 04000 */
@@ -223,6 +223,19 @@ sleep(unsigned int second);
 ## Pthread
 ```C
 #include <pthread.h>
+
+int
+pthread_create(pthread_t *thread, const pthread_attr_t *attr,
+               void *(*start_routine)(void *), void *arg)
+
+int
+pthread_join(pthread_t thread, void **value_ptr)
+
+```
+
+## Signal
+```C
+#include <signal.h>
 /* TODO */
 ```
 
