@@ -1,9 +1,3 @@
 *.swp
 .DS_STORE
-
-
-# binary files
-showip
-server
-client
-stat
+*.o
