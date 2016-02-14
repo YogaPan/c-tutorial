@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    say_fuck();
-    return 0;
+        say_fuck();
+        return 0;
 }
