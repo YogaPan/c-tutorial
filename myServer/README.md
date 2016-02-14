@@ -7,30 +7,30 @@
 #include <netdb.h>
 
 struct addrinfo {
-    int ai_flags;               /* AI_PASSIVE, AI_CANONNAME */
-    int ai_family;              /* AF_INET, AF_INET6, AF_UNSPEC */
-    int ai_socktype;            /* SOCK_STREAM, SOCK_DGRAM */
-    int ai_protocol;            /* "0" means any. */
-    size_t ai_addrlen;          /* sizeof ai_addr */
-    struct sockaddr *ai_addr;   /* struct sockaddr_in or sockaddr_in6 */
-    char *ai_cannonname;        /* hostname */
-    struct addrinfo *ai_next;   /* next node */
+        int ai_flags;               /* AI_PASSIVE, AI_CANONNAME */
+        int ai_family;              /* AF_INET, AF_INET6, AF_UNSPEC */
+        int ai_socktype;            /* SOCK_STREAM, SOCK_DGRAM */
+        int ai_protocol;            /* "0" means any. */
+        size_t ai_addrlen;          /* sizeof ai_addr */
+        struct sockaddr *ai_addr;   /* struct sockaddr_in or sockaddr_in6 */
+        char *ai_cannonname;        /* hostname */
+        struct addrinfo *ai_next;   /* next node */
 };
 
 struct sockaddr {
-    unsigned short sa_famaly;   /* AF_XXX */
-    char sa_data[14];           /* 14 bytes of protocol address */
+        unsigned short sa_famaly;   /* AF_XXX */
+        char sa_data[14];           /* 14 bytes of protocol address */
 };
 
 struct sockaddr_in {
-    short int sin_family;        /* address family, AF_XXX */
-    unsigned short int sin_port; /* port number */
-    struct in_addr sin_addr;     /* Internet address */
-    unsigned char sin_zero[8];   /* same as struct sockaddr size */
+        short int sin_family;        /* address family, AF_XXX */
+        unsigned short int sin_port; /* port number */
+        struct in_addr sin_addr;     /* Internet address */
+        unsigned char sin_zero[8];   /* same as struct sockaddr size */
 };
 
 struct in_addr {
-    uint32_t s_addr;             /* That's 32-bit int (4 bytes) */
+        uint32_t s_addr;             /* That's 32-bit int (4 bytes) */
 };
 
 int getaddrinfo(const char *node,
@@ -58,7 +58,7 @@ hints.ai_socktype = SOCK_STREAM;
 hints.ai_flags = AI_PASSIVE;
 
 if ((status = getaddrinfo(NULL, "3000", &hints, &servinfo)) != 0) {
-    fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
+        fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
 }
 
 /*
@@ -85,25 +85,25 @@ hints.ai_family = AF_UNSPEC;
 hints.ai_socktype = SOCK_STREAM;
 
 if ((status = getaddrinfo("www.google.com", NULL, &hints, &res)) != 0) {
-    fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
+        fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
 }
 
 for (p = res; p != NULL; p = p->ai_next) {
-    void *addr;
-    char *ipver;
+        void *addr;
+        char *ipver;
 
-    if (p->ai_family == AF_INET) {
-        struct sockaddr_in *ipv4 = (struct sockaddr_in *)p->ai_addr;
-        addr = &(ipv4->sin_addr);
-        ipver = "IPv4";
-    } else {
-        struct sockaddr_in6 *ipv6 = (struct sockaddr_in6 *)p->ai_addr;
-        addr = &(ipv6->sin6_addr);
-        ipver = "IPv6";
-    }
+        if (p->ai_family == AF_INET) {
+                struct sockaddr_in *ipv4 = (struct sockaddr_in *)p->ai_addr;
+                addr = &(ipv4->sin_addr);
+                ipver = "IPv4";
+        } else {
+                struct sockaddr_in6 *ipv6 = (struct sockaddr_in6 *)p->ai_addr;
+                addr = &(ipv6->sin6_addr);
+                ipver = "IPv6";
+        }
 
-    inet_ntop(p->ai_family, addr, ipstr, sizeof(ipstr));
-    printf(" %s: %s\n", ipver, ipstr);
+        inet_ntop(p->ai_family, addr, ipstr, sizeof(ipstr));
+        printf(" %s: %s\n", ipver, ipstr);
 }
 
 freeaddrinfo(res);
@@ -165,8 +165,8 @@ accept();
 ```C
 int yes = 1; /* solaris user: char yes = "1"; */
 if (setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
-    perror("setsockopt");
-    exit(1);
+        perror("setsockopt");
+        exit(1);
 }
 ```
 
