@@ -85,3 +85,8 @@ make cleandist  # clean files that generate by ./configure
 ```sh
 make dist
 ```
+
+## Learning Resources
+
+[Autotools Tutorial for Beginners](http://markuskimius.wikidot.com/programming:tut:autotools)
+[GNU Build System: Autotools 初探](http://wen00072-blog.logdown.com/tags/autotool#at-integrate)
