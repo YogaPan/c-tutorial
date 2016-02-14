@@ -220,10 +220,16 @@ sleep(unsigned int second);
 
 ```
 
+## Pthread
+```C
+#include <pthread.h>
+/* TODO */
+```
+
 ## Errno
 ```C
 #include <errno.h>
-
+/* TODO */
 ```
 
 ## Learning Resources
