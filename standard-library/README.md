@@ -78,6 +78,34 @@ for (char *p = strtok(s, " "); p != NULL; p = strtok(NULL, " "))
 
 ```
 
+## String and Number cast
+```C
+#include <stdlib.h>
+
+int
+atoi(const char *str);
+double
+atof(const char *str);
+long
+atol(const char *str);
+long long
+atol(const char *str);
+
+double
+strtod(const char *nptr, char **endptr);
+float
+strtof(const char *nptr, char **endptr);
+long
+strtol(const char *nptr, char **endptr, int base);
+long long
+strtoll(const char *nptr, char **endptr, int base);
+unsigned long
+strtoul(const char *nptr, char **endptr, int base);
+unsigned long long
+strtoll(const char *nptr, char **endptr, int base);
+
+```
+
 ## Memory
 ```C
 #include <stdlib.h>
@@ -118,28 +146,226 @@ memset(void *b, int c, size_t n);
 
 ```
 
+## Charactor
+```C
+#include <ctype.h>
+
+int
+isdigit(int c);
+
+int
+isalpha(int c);
+
+int
+isalnum(int c);
+
+int
+isxdigit(int c);
+
+int
+islower(int c);
+
+int
+isupper(int c);
+
+int
+isspace(int c);
+
+int
+iscntrl(int c);
+
+int
+ispunct(int c);
+
+int
+isprint(int c);
+
+int
+isgraph(int c);
+
+```
+
 ## Math
 ```C
 #include <math.h>
-/* TODO */
+
+#define M_PI 3.141593
+
+double
+sin(double x);
+double
+asin(double x);
+double
+sinh(double x);
+
+double
+cos(double x);
+double
+acos(double x);
+double
+cosh(double x);
+
+double
+tan(double x);
+double
+atan(double x);
+double
+tanh(double x);
+
+double
+exp(double x);
+
+double
+log(double x);
+double
+log10(double x);
+
+double
+pow(double x, double y);
+double
+sqrt(double x);
+
+double
+ceil(double x);
+double
+floor(double x);
+
+double
+fmod(double x);
+
+double
+fabs(double x);
 ```
 
-## Input
 ```C
-#include <stdio.h>
-/* TODO */
+#include <stdlib.h>
+
+int
+abs(int x);
+long
+labs(long x);
+
+int
+rand(void);
+void
+srand(unsigned int seed);
+
+/* Usage example */
+#include <stdlib.h>
+#include <time.h>
+
+srand(time(NULL));
+int r = rand() % 100; /* 0~99 */
+
 ```
 
-## Output
+## Input, Output and File.
+### Input
 ```C
 #include <stdio.h>
-/* TODO */
+
+int
+scanf(const char *fmt, ...);
+
+int
+fscanf(FILE *stream, const char *fmt, ...);
+
+char *
+fgets(char *str, int size, FILE *stream);
+
+int
+getchar(void);
+
+int
+fgetc(FILE *stream);
+
 ```
 
-## File
+### Output
 ```C
 #include <stdio.h>
-/* TODO */
+
+int
+printf(const char *fmt, ...);
+
+int
+fprintf(FILE *stream, const char *fmt, ...);
+
+int
+puts(const char *str);
+
+int
+fputs(const char *str, FILE *stream);
+
+int
+putchar(int c);
+
+int
+fputc(int c, FILE *stream);
+```
+
+### File
+```C
+#include <stdio.h>
+
+#define EOF -1
+#define SEEK_SET 0
+#define SEEK_CUR 1
+#define SEEK_END 2
+
+FILE *stdin, *stdout, *stderr;
+
+/* mode options */
+"w", "r", "a", "w+", "r+", "a+"
+"wb", "rb", "ab", "wb+", "rb+", "ab+"
+
+/* r+ doesn't delete the content of the file and doesn't create a new file if such file doesn't exist,
+ * whereas w+ deletes the content of the file and creates it if it doesn't exist. */
+
+FILE *
+fopen(const char *filename, const char *mode);
+
+FILE *
+freopen(const char *filename, const char *mode, FILE *stream);
+
+int
+fclose(FILE *stream);
+
+int
+feof(FILE *stream);
+
+int
+fflush(FILE *stream);
+
+void
+rewind(FILE *stream);
+int
+fseek(FILE *stream, long offset, int whence);
+
+int
+fprintf(FILE *stream, const char *fmt, ...);
+
+int
+fscanf(FILE *stream, const char *fmt, ...);
+
+int
+fputs(const char *str, FILE *stream);
+
+char *
+fgets(char *str, int size, FILE *stream);
+
+int
+fputc(int c, FILE *stream);
+
+int
+fgets(FILE *stream);
+
+size_t
+fwrite(const void *ptr, size_t size, size_t nitems, FILE *stream);
+
+size_t
+fread(const void *ptr, size_t size, size_t nitems, FILE *stream);
+
 ```
 
 ## Learning resource
