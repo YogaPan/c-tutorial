@@ -81,12 +81,41 @@ for (char *p = strtok(s, " "); p != NULL; p = strtok(NULL, " "))
 ## Memory
 ```C
 #include <string.h>
-/* TODO */
+
+void *
+memcpy(void *dst, const void *src, size_t n);
+
+void *
+memmove(void *dst, const void *src, size_t n);
+
+int
+memcmp(const void *s1, const void *s2, size_t);
+
+void *
+memchr(const void *str, int c, size_t);
+
+void *
+memset(void *b, int c, size_t n);
+
 ```
 
 ```C
 #include <stdlib.h>
-/* TODO */
+
+void *
+malloc(size_t size);
+
+/* Same as malloc, but initialize zero. */
+void *
+calloc(size_t count, size_t size);
+
+/* Realloc new size and return new address */
+void *
+realloc(void *ptr, size_t size);
+
+void *
+free(void *ptr);
+
 ```
 
 ## Math

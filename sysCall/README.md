@@ -7,9 +7,9 @@
 int
 open(const char *path, int flag, mode_t mode);
 
+/* creat(path, mode) is the same as open(path, O_CREAT | O_TRUNC | O_WRONLY, mode) */
 int
 creat(const char *path, mode_t mode);
-/* creat(path, mode) is the same as open(path, O_CREAT | O_TRUNC | O_WRONLY, mode) */
 
 /* flag options */
 O_RDONLY    /* Read only */
