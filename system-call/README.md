@@ -129,9 +129,8 @@ closedir(DIR *dirp);
 DIR *dir = opendir('path');
 if (dir) {
         struct dirent *entry;
-        while ((entry = readdir(dir)) != NULL) {
+        while ((entry = readdir(dir)) != NULL)
                 printf("%s\n", entry->d_name);
-        }
         closedir(dir);
 }
 
