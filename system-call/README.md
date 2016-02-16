@@ -170,15 +170,15 @@ struct stat {
         time_t st_ctime;
         blksize_t st_blksize;   /* recommend block size */
         blkcnt_t st_blocks;
-}
+};
 
-S_ISREG(st_mode)   /* Regular File */
-S_ISDIR(st_mode)   /* Directory */
-S_ISLNK(st_mode)   /* Symbolic Link */
-S_ISSOCK(st_mode)  /* Socket */
-S_ISBLK(st_mode)   /* Block Special Device */
-S_ISCHR(st_mode)   /* Character Special Device */
-S_ISFIFO(st_mode)  /* FIFO */
+S_ISREG(st_mode);   /* Regular File */
+S_ISDIR(st_mode);   /* Directory */
+S_ISLNK(st_mode);   /* Symbolic Link */
+S_ISSOCK(st_mode);  /* Socket */
+S_ISBLK(st_mode);   /* Block Special Device */
+S_ISCHR(st_mode);   /* Character Special Device */
+S_ISFIFO(st_mode);  /* FIFO */
 
 int
 stat(const char *path, struct stat *buf);
@@ -397,7 +397,6 @@ struct siginfo_t {
         unsigned int si_arch;  /* Architecture of attempted system call
                                 * (since Linux 3.5) */
 }
-
 
 int
 sigemptyset(sigset_t *set);
