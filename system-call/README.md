@@ -291,6 +291,10 @@ pthread_join(pthread_t thread, void **value_ptr);
  * 4. Unlink all files created with the tmpfile(3) function */
 void
 exit(int status);
+
+int
+atexit(void (*func)(void));
+
 ```
 
 ```C
@@ -301,9 +305,6 @@ exit(int status);
  * 3. the process's parent is sent a SIGCHLD signal */
 void
 _exit(int status);
-
-int
-atexit(void (*func)(void));
 
 ```
 
