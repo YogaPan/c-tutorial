@@ -6,10 +6,10 @@ static int running = 1;
 
 void handler(int sig)
 {
-        if (signo == SIGINT) {
+        if (sig == SIGINT) {
                 printf("Good Bye.\n");
                 running = 0;
-        } else if (signo == SIGQUIT) {
+        } else if (sig == SIGQUIT) {
                 printf("I want to sleep...\n");
                 sleep(3);
                 printf("Yeah! I feel great!!\n");

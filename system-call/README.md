@@ -261,6 +261,17 @@ execle("./hello", "hello", NULL, envp);
 
 ```
 
+```C
+#include <stdio.h>
+
+FILE *
+popen(const char *command, const char *mode);
+
+int
+pclose(FILE *stream);
+```
+
+
 ## Pthread
 ```C
 #include <pthread.h>
