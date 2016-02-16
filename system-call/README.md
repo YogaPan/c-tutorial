@@ -224,11 +224,34 @@ if (proc < 0) {
         /* proc = child pid */
 }
 
-int
-execl(const char *path, const char *arg0, ... /*, (char *)0 */);
-
 unsigned int
 sleep(unsigned int second);
+
+int
+execl(const char *path, const char *arg, ...);
+int
+execlp(const char *file, const char *arg, ...);
+int
+execle(const char *path, const char *arg, ..., char * const envp[]);
+int
+execv(const char *path, char *const argv[]);
+int
+execvp(const char *file, char *const argv[]);
+/* Above functions all implement by execve(). */
+int
+execve(const char *filename, char *const argv[],char *const envp[]);
+
+/* Example usage */
+execl("bin/ls", "ls", "-l", NULL); /* "ls" is the first argv */
+printf("This will not print if exec success.");
+
+/* "p" means you can execute your programs which in $PATH variable */
+execlp("ls", "ls", "-l", "-a", NULL);
+
+/* no "l" means you have to provide a array. */
+
+execl
+
 
 ```
 

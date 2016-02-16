@@ -7,19 +7,19 @@
 typedef char *sds;
 
 struct sdshdr {
-    int len;
-    int free;
-    char buf[];
+        int len;
+        int free;
+        char buf[];
 };
 
 #define SDS_LLSTR_SIZE 21
 #define SDS_MAX_PREALLOC (1024*1024)
 
 #define sdslen(s) \
-    (((struct sdshdr *)((s)-(sizeof(struct sdshdr))))->len)
+        (((struct sdshdr *)((s)-(sizeof(struct sdshdr))))->len)
 
 #define sdsavail(s) \
-    (((struct sdshdr *)((s)-(sizeof(struct sdshdr))))->free)
+        (((struct sdshdr *)((s)-(sizeof(struct sdshdr))))->free)
 
 sds sdsnewlen(const void *init, size_t initlen);
 sds sdsnew(const void *init);

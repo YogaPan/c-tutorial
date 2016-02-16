@@ -2,21 +2,21 @@
 #define __QUEUE_H__
 
 typedef struct queueNode {
-    void *value;
-    struct queueNode *next;
+        void *value;
+        struct queueNode *next;
 } queueNode;
 
 typedef struct queue {
-    queueNode *head;
-    queueNode *tail;
-    void *(*dup)(void *ptr);
-    void (*free)(void *ptr);
-    int (*match)(void *ptr, void *key);
-    unsigned long len;
+        queueNode *head;
+        queueNode *tail;
+        void *(*dup)(void *ptr);
+        void (*free)(void *ptr);
+        int (*match)(void *ptr, void *key);
+        unsigned long len;
 } queue;
 
 typedef struct queueIter {
-    queueNode *next;
+        queueNode *next;
 } queueIter;
 
 queue *queueCreate(void);

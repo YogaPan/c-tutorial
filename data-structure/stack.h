@@ -2,20 +2,20 @@
 #define __STACK_H__
 
 typedef struct stackNode {
-    void *value;
-    struct stackNode *next;
+        void *value;
+        struct stackNode *next;
 } stackNode;
 
 typedef struct stack {
-    stackNode *top;
-    void *(*dup)(void *ptr);
-    void (*free)(void *ptr);
-    int (*match)(void *ptr, void *key);
-    unsigned long len;
+        stackNode *top;
+        void *(*dup)(void *ptr);
+        void (*free)(void *ptr);
+        int (*match)(void *ptr, void *key);
+        unsigned long len;
 } stack;
 
 typedef struct stackIter {
-    stackNode *next;
+        stackNode *next;
 } stackIter;
 
 stack *stackCreate(void);
