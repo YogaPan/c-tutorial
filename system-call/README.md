@@ -345,12 +345,68 @@ _exit(int status);
  * 30    SIGUSR1      terminate process    User defined signal 1
  * 31    SIGUSR2      terminate process    User defined signal 2 */
 
+int
+kill(pid_t, pid, int sig);
+
 typedef void (*sig_t) (int);
 sig_t
 signal(int sig, sig_t func);
 
+
+/* Usage example */
+void intHandler(int sig)
+{
+        printf("Good Bye.\n");
+        exit(EXIT_SUCCESS);
+}
+
+signal(SIGINT, intHandler);
+
+struct sigaction {
+        void (*sa_handler)(int);
+        void (*sa_sigaction)(int, siginfo_t *, void *);
+        sigset_t sa_mask;
+        int sa_flags;
+};
+
+struct siginfo_t {
+        int      si_signo;     /* Signal number */
+        int      si_errno;     /* An errno value */
+        int      si_code;      /* Signal code */
+        int      si_trapno;    /* Trap number that caused hardware-generated signal
+                                * (unused on most architectures) */
+        pid_t    si_pid;       /* Sending process ID */
+        uid_t    si_uid;       /* Real user ID of sending process */
+        int      si_status;    /* Exit value or signal */
+        clock_t  si_utime;     /* User time consumed */
+        clock_t  si_stime;     /* System time consumed */
+        sigval_t si_value;     /* Signal value */
+        int      si_int;       /* POSIX.1b signal */
+        void    *si_ptr;       /* POSIX.1b signal */
+        int      si_overrun;   /* Timer overrun count; POSIX.1b timers */
+        int      si_timerid;   /* Timer ID; POSIX.1b timers */
+        void    *si_addr;      /* Memory location which caused fault */
+        long     si_band;      /* Band event (was int in glibc 2.3.2 and
+                                * earlier) */
+        int      si_fd;        /* File descriptor */
+        short    si_addr_lsb;  /* Least significant bit of address
+                                * (since Linux 2.6.32) */
+        void    *si_call_addr; /* Address of system call instruction
+                                * (since Linux 3.5) */
+        int      si_syscall;   /* Number of attempted system call (since Linux 3.5) */
+        unsigned int si_arch;  /* Architecture of attempted system call
+                                * (since Linux 3.5) */
+}
+
+
 int
-kill(pid_t, pid, int sig);
+sigemptyset(sigset_t *set);
+
+int
+sigaddset(sigset_t *set, int signo);
+
+int
+sigaction(int sig, const struct sigaction *act, struct sigaction *oact);
 
 ```
 
@@ -358,6 +414,26 @@ kill(pid_t, pid, int sig);
 ## Time
 ```C
 #include <sys/time.h>
+
+#define ITIMER_REAL      0            /* SIGALRM */
+#define ITIMER_VIRTUAL   1            /* SIGTALRM */
+#define ITIMER_PROF      2            /* SIGPROF */
+
+struct itimerval {
+        struct timeval it_interval;   /* timer interval */
+        struct timeval it_value;      /* current value */
+};
+
+struct timeval {
+        time_t tv_sec;                /* seconds */
+        suseconds_t tv_usec;          /* microseconds */
+};
+
+int
+getitimer(int which, struct itimerval *value);
+
+int
+setitimer(int which, const struct itimerval value, struct timeval ovalue);
 
 ```
 
