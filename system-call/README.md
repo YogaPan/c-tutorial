@@ -227,6 +227,8 @@ if (proc < 0) {
 unsigned int
 sleep(unsigned int second);
 
+extern char **environ;
+
 int
 execl(const char *path, const char *arg, ...);
 int
@@ -239,7 +241,7 @@ int
 execvp(const char *file, char *const argv[]);
 /* Above functions all implement by execve(). */
 int
-execve(const char *filename, char *const argv[],char *const envp[]);
+execve(const char *filename, char *const argv[], char *const envp[]);
 
 /* Example usage */
 execl("bin/ls", "ls", "-l", NULL); /* "ls" is the first argv */
@@ -248,10 +250,14 @@ printf("This will not print if exec success.");
 /* "p" means you can execute your programs which in $PATH variable */
 execlp("ls", "ls", "-l", "-a", NULL);
 
-/* no "l" means you have to provide a array. */
+/* no "l" means you have to provide an array. */
 
-execl
+char *argv[] = { "ls", "-l", NULL };
+execvp("ls", argv);
 
+/* "e" means pass environment varialble to exec process. */
+char * const envp[] = { "AA=11", "BB=22", NULL };
+execle("./hello", "hello", NULL, envp);
 
 ```
 
@@ -293,3 +299,5 @@ pthread_join(pthread_t thread, void **value_ptr);
 - [簡介檔案系統 (File System)](https://www.ptt.cc/bbs/b97902HW/M.1270924592.A.668.html)
 - [簡介 link/stat/chdir/opendir](https://www.ptt.cc/bbs/b97902HW/M.1270981044.A.909.html)
 - [linux stat函数讲解](http://www.cnblogs.com/hnrainll/archive/2011/05/11/2043361.html)
+- [进程生命周期与PCB（进程控制块）](https://github.com/YogaPan/c-tutorial/tree/master/system-call)
+- [exec系列函数（execl,execlp,execle,execv,execvp)使用](http://www.cnblogs.com/mickole/p/3187409.html)
