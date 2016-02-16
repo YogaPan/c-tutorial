@@ -276,6 +276,37 @@ pthread_join(pthread_t thread, void **value_ptr);
 
 ```
 
+## Exit
+```C
+#include <stdlib.h>
+
+#define EXIT_SUCCESS 0
+#define EXIT_FAILURE 1
+
+/* Before termination, exit() performs the following functions in the order listed:
+ * 1. Call the functions registered with the atexit(3) function,
+ *    in the reverse order of their registration.
+ * 2. Flush all open output streams.
+ * 3. Close all open streams.
+ * 4. Unlink all files created with the tmpfile(3) function */
+void
+exit(int status);
+```
+
+```C
+#include <unistd.h>
+
+/* 1. Any open file descriptors belonging to the process are closed.
+ * 2. Any children of the process are inherited  by process 1, init.
+ * 3. the process's parent is sent a SIGCHLD signal */
+void
+_exit(int status);
+
+int
+atexit(void (*func)(void));
+
+```
+
 ## Signal
 ```C
 #include <signal.h>
