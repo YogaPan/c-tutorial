@@ -32,7 +32,7 @@ int main(void)
         sigaddset(&act.sa_mask, SIGINT);
         act.sa_flags = SA_SIGINFO;
 
-        if (sigaction(SIGQUIT, &act, NULL) == -1)
+        if (sigaction(SIGQUIT, &act2, NULL) == -1)
                 perror("sigaction");
 
         while (running);

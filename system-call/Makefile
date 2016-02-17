@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall
-LDFLAGS = -lpthread
+LDFLAGS = -pthread
 
 EXECUTABLES = $(basename $(wildcard *.c))
 .PHONY = all clean

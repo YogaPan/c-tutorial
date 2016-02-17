@@ -1,5 +1,10 @@
 # Linux Kernel Build
 
+```sh
+sudo insmod ./hello.ko
+sudo rmmod ./hello.ko
+```
+
 ## Learning Resources
 - [The Eudyptula Challenge](http://eudyptula-challenge.org)
 - [Linux Cross Reference](http://lxr.free-electrons.com)

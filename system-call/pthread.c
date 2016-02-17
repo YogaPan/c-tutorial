@@ -6,11 +6,12 @@
 
 void *show_message(void *ptr)
 {
+        int i;
         const char *message1;
         char *message2;
         message1 = (char *)ptr;
 
-        for (int i = 0; i < 5; i++) {
+        for (i = 0; i < 5; i++) {
                 printf("%s\n", message1);
                 sleep(1);
                 usleep(1);

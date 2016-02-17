@@ -5,8 +5,9 @@ extern char **environ;
 
 int main(void)
 {
+        int i;
         printf("hello pid=%d\n", getpid());
-        for(int i = 0; environ[i] != NULL; i++)
+        for(i = 0; environ[i] != NULL; i++)
                 printf("%s\n", environ[i]);
         return 0;
 }

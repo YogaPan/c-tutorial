@@ -23,7 +23,7 @@ int main(int argc, const char **argv)
                 printf("%s is a directory\n", filename);
         else
                 printf("%s is a file\n", filename);
-        printf("%lld\n", s.st_size);
+        printf("%ld\n", s.st_size);
         printf("%o\n", s.st_mode);
         printf("%ld\n", s.st_ctime);
 
