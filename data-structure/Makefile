@@ -1,7 +1,14 @@
-executable = list sds queue stack dict
+CC = gcc
+CFLAGS = -Wall
+LDFLAGS = -pthread
+EXECUTABLES = $(basename $(wildcard *.c))
 
-all:
+.PHONY: all clean
 
+all: $(EXECUTABLES)
+
+tags:
+	ctags -R *
 
 clean:
-	rm -rf $(executable)
+	rm -rf $(EXECUTABLES)

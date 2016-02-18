@@ -112,6 +112,7 @@ int list_pop(list *list, int idx)
 listNode *list_getNode(list *list, int idx)
 {
         int len;
+        int i;
         listNode *currNode;
 
         len = list->len;
@@ -124,11 +125,11 @@ listNode *list_getNode(list *list, int idx)
 
         if (idx < len / 2) {
                 currNode = list->head;
-                for (int i = 0; i < idx; i++)
+                for (i = 0; i < idx; i++)
                         currNode = currNode->next;
         } else {
                 currNode = list->tail;
-                for (int i = 0; i < len - idx - 1; i++)
+                for (i = 0; i < len - idx - 1; i++)
                         currNode = currNode->prev;
         }
 

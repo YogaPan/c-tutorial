@@ -4,7 +4,6 @@
 #include <ctype.h>
 #include <assert.h>
 #include "sds.h"
-#include "testhelp.h"
 
 sds sdsnewlen(const void *init, size_t initlen)
 {
@@ -248,17 +247,19 @@ void sdsrange(sds s, int start, int end)
 
 void sdstolower(sds s)
 {
+        int i;
         int len = sdslen(s);
 
-        for (int i = 0; i < len; i++)
+        for (i = 0; i < len; i++)
                 s[i] = tolower(s[i]);
 }
 
 void sdstoupper(sds s)
 {
+        int i;
         int len = sdslen(s);
 
-        for (int i = 0; i < len; i++)
+        for (i = 0; i < len; i++)
                 s[i] = toupper(s[i]);
 }
 
@@ -315,8 +316,9 @@ sds sdsfromlonglong(long long value)
 
 sds sdsjoin(char **argv, int argc, char *sep)
 {
+        int i;
         sds join = sdsempty();
-        for (int i = 0; i < argc; i++) {
+        for (i = 0; i < argc; i++) {
                 join = sdscat(join, argv[i]);
                 if (i != argc-1)
                         join = sdscat(join, sep);
