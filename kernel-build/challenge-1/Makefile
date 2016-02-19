@@ -1,4 +1,4 @@
-obj-m += hello.o
+obj-m := hello.o
 KVERSION := $(shell uname -r)
 KDIR := /lib/modules/$(KVERSION)/build
 PWD := $(shell pwd)
