@@ -8,7 +8,7 @@
 void say_fuck(void)
 {
 #ifdef HAVE_UNISTD_H
-        sleep(3);
+	sleep(3);
 #endif
-        printf("fuck\n");
+	printf("fuck\n");
 }

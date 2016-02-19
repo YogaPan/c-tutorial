@@ -2,15 +2,15 @@
 #define _LIST_H
 
 typedef struct listNode {
-        int value;
-        struct listNode *prev;
-        struct listNode *next;
+	int value;
+	struct listNode *prev;
+	struct listNode *next;
 } listNode;
 
 typedef struct list {
-        int len;
-        struct listNode *head;
-        struct listNode *tail;
+	int len;
+	struct listNode *head;
+	struct listNode *tail;
 } list;
 
 list *list_create(void);

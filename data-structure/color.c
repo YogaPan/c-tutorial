@@ -11,13 +11,13 @@
 
 int main(int argc, char **argv)
 {
-        printf("%sred\n", RED);
-        printf("%sgreen\n", GRN);
-        printf("%syellow\n", YEL);
-        printf("%sblue\n", BLU);
-        printf("%smagenta\n", MAG);
-        printf("%scyan\n", CYN);
-        printf("%swhite\n", WHT);
-        printf("%snormal\n", NRM);
-        return 0;
+	printf("%sred\n", RED);
+	printf("%sgreen\n", GRN);
+	printf("%syellow\n", YEL);
+	printf("%sblue\n", BLU);
+	printf("%smagenta\n", MAG);
+	printf("%scyan\n", CYN);
+	printf("%swhite\n", WHT);
+	printf("%snormal\n", NRM);
+	return 0;
 }
