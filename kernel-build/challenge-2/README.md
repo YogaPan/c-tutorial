@@ -8,8 +8,7 @@ $ make localmodconfig   # All your settings will in .config
 $ vim .config           # change CONFIG_LOCALVERSION_AUTO=y
 
 $ make -jx              # x means how many cpus you have
-$ make modules
-$ make modules_install
+$ make modules_install install
 $
 $ dmesg | head -n 2
 $ uname -a
