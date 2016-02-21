@@ -9,5 +9,8 @@ hello: hello.o
 hello.o: hello.S
 	gcc -c hello.S
 
+tags:
+	ctags -R *
+
 clean:
 	rm -rf hello hello.o
