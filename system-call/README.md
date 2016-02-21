@@ -454,7 +454,7 @@ setitimer(int which, const struct itimerval value, struct timeval ovalue);
 
 ## How to see system call in your program
 ```sh
-strace ./your-program
+$ strace ./your-program
 ```
 
 ## Learning Resources
