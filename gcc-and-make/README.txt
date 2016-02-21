@@ -1,5 +1,5 @@
 GNU Compiler Collection(GCC)
-===========================
+============================
 
 Options:
         -c         Compile and assembly but not link, this will generate *.o files.
@@ -14,7 +14,6 @@ Options:
         -Idir      Add header files's search paths.
         -llibrary  Link library.
         -Ldir      Add librarys search paths.
-
 
 LINK:
 
@@ -31,12 +30,14 @@ VARIABLES:
         VAR1 := VAR2            If VAR2 change, VAR1 will keep the origin value.
         VAR1 ?= VAR2            Set VAR1 default value to VAR2.
         VAR1 += VAR2            Add string into VAR1.
-        echo $(VAR)            Get value.
+        echo $(VAR)             Get value.
 
 The basic format is:
 
         target: prerequisites
             commands
+
+        .PHONY: all clean install
 
 Command will be executed if:
 
@@ -69,4 +70,14 @@ CONDITION:
                 command2
         endif
 
-EXAMPLE:
+Default compiler and flags:
+
+        CC        = gcc
+        CFLAGS    = -Wall
+        LDFLAGS   = -lcurses -lm -pthread
+        OBJS      = $(patsubst %.c,%.,%(wildcard *.c))
+
+LINK:
+
+- http://wen00072.github.io/blog/2014/07/09/gnu-make-autotools-and-cmake-introduction-slides-on-line/
+- http://maxubuntu.blogspot.tw/2010/02/makefile.html
