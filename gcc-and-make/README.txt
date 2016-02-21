@@ -55,4 +55,15 @@ Command will be executed if
         1. target not exist.
         2. prerequisites's mtime is newer than target's mtime.
 
+SYMBOLS:
 
+        $@              Target.
+        $^              Prerequisites.
+        $<              First Prerequisites.
+        $?              Newer than target's prerequisites.
+
+
+FUNCTIONS:
+        $(warning message)
+        $(error message)
+        $(subst from,to,string)
