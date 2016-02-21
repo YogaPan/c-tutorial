@@ -1,3 +1,7 @@
+*
+!*.*
+!Makefile
+
 *.swp
 .DS_STORE
 *.o
