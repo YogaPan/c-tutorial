@@ -25,32 +25,20 @@ LINK:
 Makefile
 ========
 
-If VAR2 change, VAR1 will change too.
+VARIABLES:
 
-        VAR1 = VAR2
+        VAR1  = VAR2            If VAR2 change, VAR1 will change too.
+        VAR1 := VAR2            If VAR2 change, VAR1 will keep the origin value.
+        VAR1 ?= VAR2            Set VAR1 default value to VAR2.
+        VAR1 += VAR2            Add string into VAR1.
+        echo $(VAR)            Get value.
 
-If VAR2 change, VAR1 will keep the origin value.
-
-        VAR1 := VAR2
-
-Set VAR1 default value to VAR2.
-
-        VAR1 ?= VAR2
-
-This will let you add string into VAR1.
-
-        VAR1 += VAR2
-
-You can use $(VAR) to get VAR's return value
-
-        echo $(VAR2)
-
-The basic format is
+The basic format is:
 
         target: prerequisites
             commands
 
-Command will be executed if
+Command will be executed if:
 
         1. target not exist.
         2. prerequisites's mtime is newer than target's mtime.
@@ -64,6 +52,21 @@ SYMBOLS:
 
 
 FUNCTIONS:
+
         $(warning message)
         $(error message)
+        $(shell command)
+        $(wildcard file_patter)
+        $(basename filename)
         $(subst from,to,string)
+        $(patsubst patter,dest,str)
+
+CONDITION:
+
+        ifeq($(name),Yoga)
+                command1
+        else
+                command2
+        endif
+
+EXAMPLE:
