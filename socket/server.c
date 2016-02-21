@@ -77,14 +77,15 @@ static void *accept_request(void *arg)
 	char method [255];
 	char url[255];
 	char path[512];
-	int numchars;
+	/* int numchars; */
 	char *query_string = NULL;
 	int cgi = 0;
 	size_t i, j;
 	struct stat st;
 	int client = (int)(intptr_t)arg;
 
-	numchars = get_line(client, buf, sizeof(buf));
+	/* numchars = get_line(client, buf, sizeof(buf)); */
+	get_line(client, buf, sizeof(buf));
 	i = 0; j = 0;
 	while (!isspace(buf[j]) && (i < sizeof(method) - 1)) {
 		method[i] = buf[j];
