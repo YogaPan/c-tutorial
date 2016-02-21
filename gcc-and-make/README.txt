@@ -24,15 +24,13 @@ LINK:
 Makefile
 ========
 
-1. Variable:
+If VAR2 change, and VAR1 will change too.
 
-   If VAR2 change, and VAR1 will change too.
+        VAR1 = VAR2
 
-           VAR1 = VAR2
+If VAR2 changes, and VAR1 will keep the origin value.
 
-   If VAR2 changes, and VAR1 will keep the origin value.
+        VAR1 := VAR2
 
-           VAR1 := VAR2
-
-   VAR1 ?= VAR2
-   VAR1 += VAR2
+VAR1 ?= VAR2
+VAR1 += VAR2
