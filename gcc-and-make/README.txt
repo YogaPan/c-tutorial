@@ -37,4 +37,22 @@ Set VAR1 default value to VAR2.
 
         VAR1 ?= VAR2
 
-VAR1 += VAR2
+This will let you add string into VAR1.
+
+        VAR1 += VAR2
+
+You can use $(VAR) to get VAR's return value
+
+        echo $(VAR2)
+
+The basic format is
+
+        target: prerequisites
+            commands
+
+Command will be executed if
+
+        1. target not exist.
+        2. prerequisites's mtime is newer than target's mtime.
+
+
