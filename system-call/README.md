@@ -452,6 +452,11 @@ setitimer(int which, const struct itimerval value, struct timeval ovalue);
 /* TODO */
 ```
 
+## How to see system call in your program
+```sh
+strace ./your-program
+```
+
 ## Learning Resources
 - [簡介 fork, exec*, pipe, dup2](https://www.ptt.cc/bbs/b97902HW/M.1268932130.A.0CF.html)
 - [簡介 fork, exec*, dup2, pipe](https://www.ptt.cc/bbs/b97902HW/M.1268953601.A.BA9.html)
