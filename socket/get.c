@@ -11,7 +11,7 @@
 #define PORT "8888"
 #define MAXDATASIZE 1000
 
-void *get_in_addr(struct sockaddr *sa)
+static void *get_in_addr(struct sockaddr *sa)
 {
 	if (sa->sa_family == AF_INET) {
 		return &(((struct sockaddr_in *)sa)->sin_addr);
@@ -37,15 +37,15 @@ int main(int argc, char **argv)
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
-	if ((rv = getaddrinfo(argv[1], PORT, &hints, &servinfo)) != 0) {
+	rv = getaddrinfo(argv[1], PORT, &hints, &servinfo);
+	if (rv != 0) {
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
 		return 1;
 	}
 
 	for (p = servinfo; p != NULL; p = p->ai_next) {
-		if ((sockfd = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) \
-				== -1)
-		{
+		sockfd = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
+		if (sockfd == -1) {
 			perror("client: socket");
 			continue;
 		}
@@ -63,16 +63,17 @@ int main(int argc, char **argv)
 	}
 
 	inet_ntop(p->ai_family, get_in_addr((struct sockaddr *)p->ai_addr), \
-			s, sizeof(s));
+		  s, sizeof(s));
 
 	printf("client: connecting to %s\n", s);
 	freeaddrinfo(servinfo);
 
-	if ((send(sockfd, "GET / HTTP/1.1\r\n\r\n", 30, 0)) == -1) {
+	if (send(sockfd, "GET / HTTP/1.1\r\n\r\n", 30, 0) == -1) {
 		perror("send");
 		exit(1);
 	}
-	if ((numbytes = recv(sockfd, buf, MAXDATASIZE-1, 0)) == -1) {
+	numbytes = recv(sockfd, buf, MAXDATASIZE-1, 0);
+	if (numbytes == -1) {
 		perror("recv");
 		exit(1);
 	}

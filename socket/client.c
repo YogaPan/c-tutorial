@@ -11,7 +11,7 @@
 #define PORT "80"
 #define MAX_DATA_SIZE 1024
 
-void *get_in_addr(struct sockaddr *sa)
+static void *get_in_addr(struct sockaddr *sa)
 {
 	if (sa->sa_family == AF_INET) {
 		return &(((struct sockaddr_in *)sa)->sin_addr);
@@ -39,13 +39,15 @@ int main(int argc, char **argv)
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
-	if ((rv = getaddrinfo(argv[1], PORT, &hints, &servinfo)) != 0) {
+	rv = getaddrinfo(argv[1], PORT, &hints, &servinfo);
+	if (rv != 0) {
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
 		exit(1);
 	}
 
 	for (p = servinfo; p != NULL; p = p->ai_next) {
-		if ((sockfd = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1) {
+		sockfd = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
+		if (sockfd == -1) {
 			perror("client: socket");
 			continue;
 		}
@@ -74,7 +76,8 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 
-	if ((numbytes = recv(sockfd, buf, MAX_DATA_SIZE-1, 0)) == 0) {
+	numbytes = recv(sockfd, buf, MAX_DATA_SIZE-1, 0);
+	if (numbytes == 0) {
 		perror("recv");
 		exit(1);
 	}

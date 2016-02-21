@@ -14,15 +14,15 @@
 
 #define SERVER_STRING "Server: yoga http\r\n"
 
-int startup(const char *port);
-void *accept_request(void *arg);
-void headers(int client, const char *filename);
-void not_found(int client);
-void serve_file(int client, const char *filename);
-void cat(int client, FILE *resource);
-int get_line(int client, char *buf, int size);
+static int startup(const char *port);
+static void *accept_request(void *arg);
+static void headers(int client, const char *filename);
+static void not_found(int client);
+static void serve_file(int client, const char *filename);
+static void cat(int client, FILE *resource);
+static int get_line(int client, char *buf, int size);
 
-int startup(const char *port)
+static int startup(const char *port)
 {
 	int server_sock = -1;
 	int rv, yes = 1;
@@ -46,9 +46,8 @@ int startup(const char *port)
 			exit(1);
 			continue;
 		}
-		if (setsockopt(server_sock, SOL_SOCKET, SO_REUSEADDR,
-					&yes, sizeof(int)) == -1)
-		{
+		if (setsockopt(server_sock, SOL_SOCKET, SO_REUSEADDR, \
+			       &yes, sizeof(int)) == -1) {
 			perror("setsockopt");
 			exit(1);
 		}
@@ -72,7 +71,7 @@ int startup(const char *port)
 	return server_sock;
 }
 
-void *accept_request(void *arg)
+static void *accept_request(void *arg)
 {
 	char buf[1024];
 	char method [255];
@@ -130,7 +129,7 @@ void *accept_request(void *arg)
 	return NULL;
 }
 
-int get_line(int sock, char *buf, int size)
+static int get_line(int sock, char *buf, int size)
 {
 	int i = 0;
 	char c = '\0';
@@ -157,14 +156,14 @@ int get_line(int sock, char *buf, int size)
 	return(i);
 }
 
-void headers(int client, const char *filename)
+static void headers(int client, const char *filename)
 {
 	char buf[1024];
 	const char *extname;
-	// (void)filename;
+	/* (void)filename; */
 
 	extname = strchr(filename, '.') + 1;
-	// puts(extname);
+	/* puts(extname); */
 	if (!strcmp(extname, "css")) {
 		extname = "css";
 	}
@@ -179,7 +178,7 @@ void headers(int client, const char *filename)
 	send(client, buf, strlen(buf), 0);
 }
 
-void not_found(int sock)
+static void not_found(int sock)
 {
 	char buf[1024];
 
@@ -193,7 +192,7 @@ void not_found(int sock)
 	send(sock, buf, strlen(buf), 0);
 }
 
-void cat(int client, FILE *resource)
+static void cat(int client, FILE *resource)
 {
 	char buf[1024];
 
@@ -204,16 +203,16 @@ void cat(int client, FILE *resource)
 	}
 }
 
-void serve_file(int client, const char *filename)
+static void serve_file(int client, const char *filename)
 {
 	FILE *resource = NULL;
-	// int numchars = 1;
-	// char buf[1024];
+	/* int numchars = 1; */
+	/* char buf[1024]; */
 
 	resource = fopen(filename, "r");
-	if (resource == NULL)
+	if (resource == NULL) {
 		not_found(client);
-	else {
+	} else {
 		headers(client, filename);
 		cat(client, resource);
 	}
@@ -236,8 +235,9 @@ int main(int argc, char **argv)
 	server_sock = startup(port);
 
 	for (;;) {
-		client_sock = accept(server_sock, (struct sockaddr *)&their_addr,
-				&sin_size);
+		client_sock = accept(server_sock,                    \
+				     (struct sockaddr *)&their_addr, \
+				     &sin_size);
 		if (client_sock == -1) {
 			perror("accept");
 			exit(1);
