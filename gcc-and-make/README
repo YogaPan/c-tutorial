@@ -44,12 +44,12 @@ Command will be executed if:
         1. target not exist.
         2. prerequisites's mtime is newer than target's mtime.
 
-Root target depends on subtargets.
+Root target depends on sub-targets.
 
     root_target: sub_target1 sub_target2
 
     sub_target1:
-            @echo $@
+            @echo $@    Add "@" before command means this command would not print.
     sub_target2:
             @echo $@
 
