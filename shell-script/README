@@ -49,6 +49,15 @@ CONDITION
 TEST
 ====
 
+"test" can used to check number, string and file.
+
+        test $x -eq $y
+
+If x equals to y, then $? will assign to 0, else 1.
+Or you can use squal brackets to wrap:
+
+        [ $x -eq $y  ]
+
 Numercial Comparison:
 
         -eq             Equal to.
@@ -78,3 +87,5 @@ File Attributes:
         -u file         file exists and has SUID bit set.
         -k file         file exists and has sticky bit set.
 
+Some technique
+=============
