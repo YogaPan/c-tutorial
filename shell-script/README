@@ -1,0 +1,43 @@
+CONDITION:
+
+    cmd1 && cmd2        cmd2 execute if cmd1 success.
+    cmd1 || cmd2        cmd2 execute if cmd1 fail.
+
+    if command is successful; then
+      execute command
+    elif command is successful; then
+      execute command
+    else
+      execute command
+    fi
+
+    for variables in list; do
+      command
+    done
+
+    while condition is true; do
+      command
+    done
+
+    case expression in
+      pattern1) command ;;
+      pattern2) command ;;
+             *) default command
+    esac
+
+DOLLAR PARAMETER:
+
+        $*          Complete set of positional parameters as a single string.
+        $#          Number of argument.
+        $0          Script name.
+        $1          Fisrt parameter.
+
+        $?          Exit status of last command.
+        $$          Pid of current shell
+        $!          Pid of last background job.
+
+EXIT:
+
+    exit            Default value is 0.
+    exit 0          Everything is nice.
+    exit 1          Something goes wrong.
