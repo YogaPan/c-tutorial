@@ -2,6 +2,7 @@
 !*/
 !*.*
 !Makefile
+!README
 
 *.swp
 .DS_STORE
