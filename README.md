@@ -9,4 +9,4 @@
 - [Unix System Call](https://github.com/YogaPan/c-tutorial/tree/master/system-call)
 - [Unix Socket](https://github.com/YogaPan/c-tutorial/tree/master/socket)
 - [Kernel Build](https://github.com/YogaPan/c-tutorial/tree/master/kernel-build)
-- [Shell](https://github.com/YogaPan/c-tutorial/tree/master/shell-script)
+- [Shell Script](https://github.com/YogaPan/c-tutorial/tree/master/shell-script)
