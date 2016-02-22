@@ -1,4 +1,24 @@
-CONDITION:
+DOLLAR PARAMETER
+================
+
+        $*          Complete set of positional parameters as a single string.
+        $#          Number of argument.
+        $0          Script name.
+        $1          Fisrt parameter.
+
+        $?          Exit status of last command.
+        $$          Pid of current shell
+        $!          Pid of last background job.
+
+EXIT
+====
+
+        exit            Default value is 0.
+        exit 0          Everything is nice.
+        exit 1          Something goes wrong.
+
+CONDITION
+=========
 
         cmd1 && cmd2        cmd2 execute if cmd1 success.
         cmd1 || cmd2        cmd2 execute if cmd1 fail.
@@ -25,19 +45,36 @@ CONDITION:
                  *) default command
         esac
 
-DOLLAR PARAMETER:
 
-        $*          Complete set of positional parameters as a single string.
-        $#          Number of argument.
-        $0          Script name.
-        $1          Fisrt parameter.
+TEST
+====
 
-        $?          Exit status of last command.
-        $$          Pid of current shell
-        $!          Pid of last background job.
+Numercial Comparison:
 
-EXIT:
+        -eq             Equal to.
+        -ne             Not equal to.
+        -gt             Greater than.
+        -ge             Greater than or equal.
+        -lt             Less than.
+        -le             Less than or equal to.
 
-        exit            Default value is 0.
-        exit 0          Everything is nice.
-        exit 1          Something goes wrong.
+String Comparison:
+
+        s1  = s2        String s1 = s2.
+        s1 != s2        String s1 is not equal to s2.
+        -n stg          String str is not a null string.
+        -z stg          String stg is a null string.
+        stg             String stg is assigned and not null.
+
+
+File Attributes:
+
+        -f file         file exists and is regular file.
+        -r file         file exists and is readable.
+        -w file         file exists and is writable.
+        -x file         file exists and is executable.
+        -d file         file exists and is a directory.
+        -s file         file exists and has a size greater than zero.
+        -u file         file exists and has SUID bit set.
+        -k file         file exists and has sticky bit set.
+
