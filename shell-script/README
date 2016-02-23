@@ -1,3 +1,8 @@
+In the head of shell script file, you should specify which "shell"
+you want to use:
+
+        #!/bin/bash
+
 DOLLAR PARAMETER
 ================
 
@@ -89,3 +94,9 @@ File Attributes:
 
 Some technique
 =============
+
+read a
+x=6; y=2
+z=`expr $x + $y`;
+basename hello.java .java       This will return hello string.
+echo "abc" > /dev/null 2>&1
