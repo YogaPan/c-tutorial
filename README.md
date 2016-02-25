@@ -14,5 +14,5 @@
 ## Linux Environment
 
 ```sh
-vagrant up && vagrant ssh
+$ vagrant up && vagrant ssh
 ```
