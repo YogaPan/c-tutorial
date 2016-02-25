@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 if (-e "abc") {
-    print("yes\n");
+	print("yes\n");
 } else {
-    print("no\n");
+	print("no\n");
 }
