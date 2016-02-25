@@ -25,6 +25,7 @@ Example
 */5 * * * * root /usr/libexec/atrun   # Every 5 minutes
 0 1 1-20 * * root /usr/libexec/atrun  # At day 1~20's one o'clock
 */5 8-16 * * * root /usr/libexec/atrun
+@reboot root /usr/libexec/atrun
 ```
 
 If cron daemon not working...
