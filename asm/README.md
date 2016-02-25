@@ -19,3 +19,6 @@ rax     | rdi    | rsi    | r10    | r8     | r9
 | return |
 |--------|
 | rax    |
+
+## Link
+[X86 Assembly/Interfacing with Linux](https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux)
