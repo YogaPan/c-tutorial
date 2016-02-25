@@ -21,6 +21,8 @@ rax     | rdi    | rsi    | r10    | r8     | r9
 | rax    |
 
 ## Hello Example
+
+### Function Prototypes
 ```C
 ssize_t
 write(int fd, const void *buf, size_t count);
@@ -29,12 +31,13 @@ void
 _exit(int status);
 ```
 
-arch/x86/include/asm/unistd_64.h
+### arch/x86/include/asm/unistd_64.h
 ```C
 #define __NR_write 1
 #define __NR_exit 60
 ```
 
+### Use C
 ```C
 include <unistd.h>
 
@@ -45,6 +48,7 @@ int main(void)
 }
 ```
 
+### Use ASM
 ```asm
 .date
 msg: .ascii "Hello World\n"
