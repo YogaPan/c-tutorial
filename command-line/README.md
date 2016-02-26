@@ -57,6 +57,14 @@ In **/etc/fstab** add:
 /swapfile none swap sw 0 0
 ```
 
+## Process
+```sh
+$ ps aux                  # All process detail
+$ ps aux | grep root      # Use pipe
+$ ps -u root              # process belongs to root
+$ ps -e                   # Initial process
+```
+
 ## LINK
 - [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 - [TLDR pages](http://tldr-pages.github.io/)
