@@ -61,8 +61,13 @@ In **/etc/fstab** add:
 ```sh
 $ ps aux                  # All process detail
 $ ps aux | grep root      # Use pipe
-$ ps -u root              # process belongs to root
+$ ps -u root              # Process belongs to root
 $ ps -e                   # Initial process
+```
+
+```
+$ kill 1234
+$ kill -9 1234            # Force
 ```
 
 ## LINK
