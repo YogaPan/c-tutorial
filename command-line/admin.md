@@ -80,6 +80,19 @@ sudo service apache2 stop
 sudo service apache2 restart
 ```
 
+## Nginx
+
+All your web page in /usr/share/nginx/html
+/etc/nginx/nginx.conf
+```sh
+sudo service nginx status
+sudo service nginx start
+sudo service nginx stop
+sudo service nginx restart
+```
+
+https://www.linode.com/docs/websites/nginx/how-to-configure-nginx
+
 ## Update time
 ```sh
 sudo ntpdate -s time.stdtime.gov.tw
