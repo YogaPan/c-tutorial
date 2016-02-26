@@ -43,7 +43,10 @@ Create a 500 MB swapfile:
 $ sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
 $ sudo mkswap /swapfile
 $ sudo swapon /swapfile
+```
 
+Check out all swap and memory status
+```sh
 $ sudo swapon -s
 $ free -m
 ```
