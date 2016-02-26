@@ -80,6 +80,11 @@ sudo service apache2 stop
 sudo service apache2 restart
 ```
 
+## Update time
+```sh
+sudo ntpdate -s time.stdtime.gov.tw
+```
+
 ## LINK
 - [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 - [TLDR pages](http://tldr-pages.github.io/)
