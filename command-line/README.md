@@ -70,6 +70,16 @@ $ kill 1234
 $ kill -9 1234            # Force
 ```
 
+## Apache2
+
+All your web page in /var/www/html
+```sh
+sudo service apache2 status
+sudo service apache2 start
+sudo service apache2 stop
+sudo service apache2 restart
+```
+
 ## LINK
 - [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 - [TLDR pages](http://tldr-pages.github.io/)
