@@ -9,10 +9,12 @@ $ adduser yogapan sudo       # Add yogapan sudoer
 ```
 
 ## Cron
-- crontab -e: edit cron
-- crontab -r: remove cron
-- crontab -l: list cron
-- crontab -u: change cron user
+| command    | descrption       |
+|------------|------------------|
+| crontab -e | edit cron        |
+| crontab -r | remove cron      |
+| crontab -l | list cron        |
+| crontab -u | change cron user |
 
 minute | hour | day  | month | week | user | command
 -------|------|------|-------|------|------|--------------
