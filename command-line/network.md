@@ -36,6 +36,13 @@ scp username@192.168.0.1:/path/to/file /path/to/local
 scp -r username@192.168.0.1:/path/to/dir /path/to/local
 ```
 
+## Telnet
+quit
+CTRL + ]
+```sh
+$ telnet ip_address port
+```
+
 ## netcat
 ```sh
 # Is port open?
