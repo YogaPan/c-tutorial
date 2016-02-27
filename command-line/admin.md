@@ -1,5 +1,17 @@
 # Basic command
 
+## Install
+```sh
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install package-name
+sudo apt-get remove package-name
+sudo apt-get autoremove
+
+apt --installed list
+```
+
 ## User
 ```sh
 $ passwd                     # change your password

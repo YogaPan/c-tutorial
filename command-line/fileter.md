@@ -3,6 +3,7 @@
 ## echo and cat
 ```sh
 echo "abc"
+echo -n "No new line"
 cat message.txt
 ```
 
