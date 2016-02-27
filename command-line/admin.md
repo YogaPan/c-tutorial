@@ -51,7 +51,7 @@ $ sudo swapon -s
 $ free -m
 ```
 
-This will add swapfile every time you restart computer.
+This will add swapfile every time you restart computer.  
 In **/etc/fstab** add:
 ```
 /swapfile none swap sw 0 0
@@ -82,7 +82,7 @@ sudo service apache2 restart
 
 ## Nginx
 
-All your web page in /usr/share/nginx/html
+All your web page in /usr/share/nginx/html  
 /etc/nginx/nginx.conf
 ```sh
 sudo service nginx status
