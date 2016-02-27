@@ -3,16 +3,18 @@
 ## IP
 ```sh
 $ ifconfig
+
+# Check IP address
 $ ifconfig | grep inet
 ```
 ## Check open port
 
 ```sh
 $ netstat
-$ netstat -p
-$ netstat -lptu | grep :http
-$ netstat -lptun | grep :80
-$ lsof -i :80
+$ sudo netstat -p
+$ sudo netstat -lptu | grep :http
+$ sudo netstat -lptun | grep :80
+$ sudo lsof -i :80
 ```
 
 ## Ping
@@ -31,4 +33,16 @@ nslookup host
 ## route
 ```sh
 traceroute host
+```
+
+## wget
+```sh
+```
+
+## curl
+```sh
+```
+
+## httpie
+```sh
 ```
