@@ -22,7 +22,7 @@ $ pwd
 ```
 
 ## cd
-```cd
+```sh
 # Go to the given directory
 $ cd /path/to/directory
 
@@ -40,7 +40,7 @@ $ cd -
 
 ```sh
 # Create a directory in current folder or given path
-mkdir directory
+$ mkdir path
 
 # Create directories recursively (useful for creating nested dirs)
 $ mkdir -p path
