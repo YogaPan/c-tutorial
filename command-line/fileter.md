@@ -41,6 +41,9 @@ sort -r filename
 # Sort passwd file by the 3rd field
 sort -t: -k 3n /etc/passwd
 
+# Sort from word
+sort -t: -k 5.7,5.8 file
+
 t=delimeter
 k=key
 r=reverse
@@ -79,6 +82,9 @@ diff -y file1 file2
 
 # Compare directories recursively
 diff -r directory1 directory2
+
+# Generate patch
+diff -Naur dir1 dir2> patch.txt
 
 # Apply a patch
 patch < patchfile.diff
