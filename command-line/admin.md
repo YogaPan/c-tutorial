@@ -15,7 +15,7 @@ apt --installed list
 
 ## User
 ```sh
-$ passwd                     # change your password
+$ passwd username                 # change your password
 $ sudo adduser username           # add new user
 $ sudo adduser username groupname # Add group to user
 $ sudo adduser yogapan sudo       # Add yogapan sudoer
@@ -47,40 +47,6 @@ $ sudo service cron status
 $ sudo service cron start
 $ sudo service cron stop
 $ sudo service cron restart
-```
-
-## swap
-
-Create a 500 MB swapfile:
-```sh
-$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
-$ sudo mkswap /swapfile
-$ sudo swapon /swapfile
-```
-
-Check out all swap and memory status
-```sh
-$ sudo swapon -s
-$ free -m
-```
-
-This will add swapfile every time you restart computer.  
-In **/etc/fstab** add:
-```
-/swapfile none swap sw 0 0
-```
-
-## Process
-```sh
-$ ps aux                  # All process detail
-$ ps aux | grep root      # Use pipe
-$ ps -u root              # Process belongs to root
-$ ps -e                   # Initial process
-```
-
-```sh
-$ kill 1234
-$ kill -9 1234            # Force
 ```
 
 ## Apache2
