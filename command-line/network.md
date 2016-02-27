@@ -37,12 +37,16 @@ traceroute host
 
 ## wget
 ```sh
+wget www.example.com
 ```
 
 ## curl
 ```sh
+curl www.example.com -o filename
 ```
 
 ## httpie
 ```sh
+$ http www.examle.com
+$ http -d www.example.com
 ```
