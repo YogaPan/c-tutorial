@@ -56,16 +56,16 @@ $ touch filename
 ## rm
 ```sh
 # Remove files from arbitrary locations
-rm /path/to/file
+$ rm /path/to/file
 
 # Remove recursively a directory and all it's subdirectories
-rm -r /path/to/folder
+$ rm -r /path/to/folder
 
 # Remove directory without prompt
-rm -rf /path/to/folder
+$ rm -rf /path/to/folder
 
 # Prompt before every removal
-rm -i
+$ rm -i
 ```
 
 ## user
