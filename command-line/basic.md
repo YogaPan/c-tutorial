@@ -72,7 +72,15 @@ $ rm -i
 
 ```sh
 $ chmod u+x file
-$ chown yogapan file
+$ chmod a+rw file
+$ chmod o=g file
+$ chmod 755 file
+
+
+$ chown user path/to/file
+$ chown user:group path/to/file
+$ chown -R user path/to/dir
+
 $ chgrp yogapan file
 ```
 
