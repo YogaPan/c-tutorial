@@ -37,7 +37,7 @@ scp -r username@192.168.0.1:/path/to/dir /path/to/local
 
 ```
 
-Login without password
+## Login without password
 ```sh
 $ ssh-keygen -t rsa
 $ scp ~/.ssh/*.pub remote:~/.ssh/
@@ -50,8 +50,8 @@ $ ssh-add
 http://blog.faq-book.com/?p=1375
 
 ## Telnet
-quit
-CTRL + ]
+- quit
+- CTRL + ]
 ```sh
 $ telnet ip_address port
 ```
