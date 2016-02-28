@@ -5,7 +5,7 @@
 $ make
 
 $ insmod hello.ko
-$ lsmod hello.ko
+$ lsmod
 $ rmmod hello.ko
 $
 $ dmesg | tail -n -3
