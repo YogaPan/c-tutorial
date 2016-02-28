@@ -1,5 +1,11 @@
 # Envirinment
 
+## Check Operating System
+```sh
+$ uname
+$ uname -a
+```
+
 .bashrc
 .zshrc
 

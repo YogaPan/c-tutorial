@@ -82,9 +82,3 @@ https://www.linode.com/docs/websites/nginx/how-to-configure-nginx
 ```sh
 sudo ntpdate -s time.stdtime.gov.tw
 ```
-
-## Check Operating System
-```sh
-$ uname
-$ uname -a
-```
