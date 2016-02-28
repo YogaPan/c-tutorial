@@ -34,7 +34,20 @@ scp -r local_dir username@192.168.0.1:/path/to/dir
 
 scp username@192.168.0.1:/path/to/file /path/to/local
 scp -r username@192.168.0.1:/path/to/dir /path/to/local
+
 ```
+
+Login without password
+```sh
+$ ssh-keygen -t rsa
+$ scp ~/.ssh/*.pub remote:~/.ssh/
+$ ssh remote
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ exit
+$ eval `ssh-agent -s`
+$ ssh-add
+```
+http://blog.faq-book.com/?p=1375
 
 ## Telnet
 quit
