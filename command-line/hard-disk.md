@@ -21,8 +21,27 @@ In **/etc/fstab** add:
 /swapfile none swap sw 0 0
 ```
 
+## df
+```sh
+# Display all file systems and their disk usage
+$ df
+
+# Human readable
+$ df -h
+```
+
+## du
+```sh
+# Get a sum of the total size of a file/folder
+$ du -sh file/directory
+
+# Get recursively, individual file/folder sizes
+$ du -ah directory
+```
+
 ## dd
 ```sh
 dd if=/dev/random of=/dev/sda
+dd if=/dev/zero of=file_1GB bs=1024 count=1000000
 mkfs.ext3 /dev/sda
 ```
