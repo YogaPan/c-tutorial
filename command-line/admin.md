@@ -13,6 +13,12 @@ dpkg --get-selections | grep -v deinstall
 apt --installed list
 ```
 
+## Shutdown
+```sh
+sudo shutdown -h now  # Halt now
+sudo shutdown -r +5   # Reboot 5 minutes later
+```
+
 ## User
 ```sh
 $ passwd username                 # change your password
