@@ -75,3 +75,22 @@ $ chmod u+x file
 $ chown yogapan file
 $ chgrp yogapan file
 ```
+
+# Date
+
+```sh
+# CST Sun 2016-02-28 21:45:23
+$ date +"%Z %a %Y-%m-%d %H:%M:%S"
+
+# Display a calendar for the current month
+$ cal
+$ cal -3
+$ cal -y
+
+# Display a calendar for a specific month
+$ cal -m month_number
+
+# Display a 12 month calendar for a specific year
+$ cal 2016
+
+```
