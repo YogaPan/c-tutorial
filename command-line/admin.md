@@ -25,6 +25,12 @@ $ passwd username                 # change your password
 $ sudo adduser username           # add new user
 $ sudo adduser username groupname # Add group to user
 $ sudo adduser yogapan sudo       # Add yogapan sudoer
+
+$ usermod -l newUsername oldUsername
+$ usermod -d /home/newHomeDir -m newUsername
+
+$ sudo deluser temporary
+$ sudo rm -r /home/temporary
 ```
 
 ## Cron
