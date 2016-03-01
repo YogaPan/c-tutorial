@@ -40,6 +40,10 @@ CONDITION
           command
         done
 
+        for (( i=1; i<=${nu}; i=i+1  )); do
+          command
+        done
+
         while condition is true; do
           command
         done
@@ -92,6 +96,14 @@ File Attributes:
         -u file         file exists and has SUID bit set.
         -k file         file exists and has sticky bit set.
 
+Function
+=============
+
+function fname() {
+  command1
+  command2
+}
+
 Some technique
 =============
 
@@ -100,3 +112,9 @@ x=6; y=2
 z=`expr $x + $y`;
 basename hello.java .java       This will return hello string.
 echo "abc" > /dev/null 2>&1
+
+LINK
+===========
+
+- http://linux.vbird.org/linux_basic/0340bashshell-scripts.php
+- https://sites.google.com/site/tiger2000/
