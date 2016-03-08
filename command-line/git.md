@@ -2,10 +2,10 @@
 
 ## Install and check version
 ```sh
-$ sudo add-apt-repository ppa:git-core/ppa -y
-$ sudo apt-get update
-$ sudo apt-get install git
-$ git --version
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update
+sudo apt-get install git
+git --version
 ```
 
 ## Basic config

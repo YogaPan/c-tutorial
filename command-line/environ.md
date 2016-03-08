@@ -2,8 +2,8 @@
 
 ## Check Operating System
 ```sh
-$ uname
-$ uname -a
+uname
+uname -a
 ```
 
 .bashrc
@@ -11,31 +11,31 @@ $ uname -a
 
 ```sh
 # Show the environment or run a program in a modified environment
-$ env
+env
 ```
 ## PATH
 ```sh
-$ echo $PATH
+echo $PATH
 ```
 
 ## USER
 ```sh
-$ echo $USER
+echo $USER
 ```
 
 ## SHELL
 ```sh
-$ echo $SHELL
+echo $SHELL
 ```
 
 ## HOME
 ```sh
-$ echo $HOME
+echo $HOME
 ```
 
 ## Command History
 ```sh
-$ history
+history
 ```
 
 ## PS1

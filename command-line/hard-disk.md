@@ -4,15 +4,15 @@
 
 Create a 500 MB swapfile:
 ```sh
-$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
-$ sudo mkswap /swapfile
-$ sudo swapon /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
+sudo mkswap /swapfile
+sudo swapon /swapfile
 ```
 
 Check out all swap and memory status
 ```sh
-$ sudo swapon -s
-$ free -m
+sudo swapon -s
+free -m
 ```
 
 This will add swapfile every time you restart computer.
@@ -24,19 +24,19 @@ In **/etc/fstab** add:
 ## df
 ```sh
 # Display all file systems and their disk usage
-$ df
+df
 
 # Human readable
-$ df -h
+df -h
 ```
 
 ## du
 ```sh
 # Get a sum of the total size of a file/folder
-$ du -sh file/directory
+du -sh file/directory
 
 # Get recursively, individual file/folder sizes
-$ du -ah directory
+du -ah directory
 ```
 
 ## dd
