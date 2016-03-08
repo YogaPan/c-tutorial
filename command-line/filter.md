@@ -158,3 +158,8 @@ sed '3,$ s/abc/zxc/g' filename
 ## awk
 ```sh
 ```
+
+## Find
+```sh
+find / -name filename -print 2>/dev/null
+```
