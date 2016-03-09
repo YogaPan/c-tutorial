@@ -68,6 +68,12 @@ rm -rf /path/to/folder
 rm -i
 ```
 
+## file
+Determine file type
+```sh
+file filename
+```
+
 ## user
 
 ```sh
