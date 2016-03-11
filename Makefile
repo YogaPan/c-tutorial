@@ -7,12 +7,14 @@ all:
 
 tags:
 	make -C system-call tags
+	make -C standard-library tags
 	make -C data-structure tags
 	make -C socket tags
 	make -C asm tags
 
 clean:
 	make -C system-call clean
+	make -C standard-library clean
 	make -C data-structure clean
 	make -C socket clean
 	make -C asm clean
