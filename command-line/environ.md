@@ -6,6 +6,14 @@ uname
 uname -a
 ```
 
+## Boot message
+```sh
+dmesg
+
+# Show all message and clean
+dmesg -c
+```
+
 .bashrc
 .zshrc
 
