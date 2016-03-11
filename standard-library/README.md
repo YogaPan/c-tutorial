@@ -374,7 +374,7 @@ int r = rand() % 100; /* 0~99 */
 /* TODO */
 ```
 
-##
+## va_list
 ```C
 #include <stdarg.h>
 
