@@ -1,5 +1,6 @@
 all:
 	make -C system-call
+	make -C standard-library
 	make -C data-structure
 	make -C socket
 	make -C asm
