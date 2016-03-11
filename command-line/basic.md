@@ -67,11 +67,20 @@ rm -rf /path/to/folder
 # Prompt before every removal
 rm -i
 ```
-
-## file
-Determine file type
+## tar
+v = verbose
 ```sh
-file filename
+# Create an archive from files:
+tar cf target.tar file1 file2 file3
+
+# Create a gzipped archive:
+tar czf target.tar.gz file1 file2 file3
+
+# Extract an archive in a target folder:
+tar xf source.tar -C folder
+
+# Extract a gzipped archive in the current directory:
+tar xzf source.tar.gz
 ```
 
 ## user
@@ -106,5 +115,4 @@ cal -m month_number
 
 # Display a 12 month calendar for a specific year
 cal 2016
-
 ```
