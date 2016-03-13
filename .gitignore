@@ -6,6 +6,7 @@
 
 tags
 .DS_STORE
+.tmp_versions
 .vagrant/
 *.swp
 *.o
@@ -13,3 +14,4 @@ tags
 *.mod.c
 *.order
 *.symvers
+*.cmd
