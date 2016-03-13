@@ -4,8 +4,12 @@
 !Makefile
 !README
 
-*.swp
-.DS_STORE
-*.o
 tags
+.DS_STORE
 .vagrant/
+*.swp
+*.o
+*.ko
+*.mod.c
+*.order
+*.symvers
