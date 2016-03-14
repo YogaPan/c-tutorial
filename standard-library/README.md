@@ -162,13 +162,21 @@ int
 sscanf(const char *str, const char *fmt, ...);
 
 ```
-http://nonsenseggler.blogspot.tw/
 
 ```C
 #include <string.h>
 
 size_t
 strlen(const char *str);
+
+/*
+ * The  strdup()  function  returns  a  pointer  to a new string which is a
+ * duplicate of the string s.  Memory for the new string is obtained with 
+ * malloc(3), and can be freed with free(3).
+ * /
+
+char *
+strdup(const char *s);
 
 char *
 strcpy(char *dst, const char *src);
@@ -224,8 +232,8 @@ strtok(char *s1, const char *s1);
 char s[] = "Speech is si1ver, silence is gold.";
 for (char *p = strtok(s, " "); p != NULL; p = strtok(NULL, " "))
         puts(p);
-
 ```
+http://nonsenseggler.blogspot.tw/
 
 ## String and Number cast
 ```C
