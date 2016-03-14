@@ -99,7 +99,7 @@ int
 fputc(int c, FILE *stream);
 
 int
-fgets(FILE *stream);
+fgetc(FILE *stream);
 
 size_t
 fwrite(const void *ptr, size_t size, size_t nitems, FILE *stream);
