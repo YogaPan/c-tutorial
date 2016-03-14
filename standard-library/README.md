@@ -162,6 +162,7 @@ int
 sscanf(const char *str, const char *fmt, ...);
 
 ```
+http://nonsenseggler.blogspot.tw/
 
 ```C
 #include <string.h>
