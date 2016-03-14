@@ -228,10 +228,6 @@ int i = strcspn (str, keys);  /* i = 5 */
 
 char *
 strtok(char *s1, const char *s1);
-/* Example usage */
-char s[] = "Speech is si1ver, silence is gold.";
-for (char *p = strtok(s, " "); p != NULL; p = strtok(NULL, " "))
-        puts(p);
 ```
 http://nonsenseggler.blogspot.tw/
 
