@@ -4,7 +4,7 @@
 
 - [GCC and Make](https://github.com/YogaPan/c-tutorial/tree/master/gcc-and-make)
 - [Autotools](https://github.com/YogaPan/c-tutorial/tree/master/autotools)
-- [Macro](https://github.com/YogaPan/c-tutorial/macro)
+- [Macro](https://github.com/YogaPan/c-tutorial/tree/master/macro)
 - [Standard Library](https://github.com/YogaPan/c-tutorial/tree/master/standard-library)
 - [Data Structure](https://github.com/YogaPan/c-tutorial/tree/master/data-structure)
 - [Algorithm](https://github.com/YogaPan/c-tutorial/tree/master/algorithm)
