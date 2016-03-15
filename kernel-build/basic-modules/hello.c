@@ -12,7 +12,6 @@ static void __exit hello_exit(void)
 	printk(KERN_DEBUG "Good Bye.\n");
 }
 
-
 module_init(hello_init);
 module_exit(hello_exit);
 
