@@ -12,22 +12,22 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	FILE *f;
+	FILE *fp;
 	const char *filename;
 
 	filename = argv[1];
-	f = fopen(filename, "r");
-	if (f)
-		read(f);
+	fp = fopen(filename, "r");
+	if (fp)
+		read(fp);
 	else
 		fprintf(stderr, "ERROR\n");
 	return 0;
 }
 
-void read(FILE *f)
+void read(FILE *fp)
 {
 	char buf[SIZE];
 
-	while (fgets(buf, SIZE, f))
+	while (fgets(buf, SIZE, fp))
 		printf("%s", buf);
 }
