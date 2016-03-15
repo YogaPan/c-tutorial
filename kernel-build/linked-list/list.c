@@ -2,10 +2,6 @@
 #include <linux/module.h>
 #include <linux/slab.h>
 
-MODULE_LICENSE("GPL");
-MODULE_AUTHOR("YogaPan <godhand1234567@gmail.com>");
-MODULE_DESCRIPTION("List");
-
 #define SIZE 64
 
 struct person {
@@ -64,3 +60,7 @@ static void __exit list_exit(void)
 
 module_init(list_init);
 module_exit(list_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("YogaPan <godhand1234567@gmail.com>");
+MODULE_DESCRIPTION("List");
