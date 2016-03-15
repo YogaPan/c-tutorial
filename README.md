@@ -7,6 +7,7 @@
 - [Macro](https://github.com/YogaPan/c-tutorial/macro)
 - [Standard Library](https://github.com/YogaPan/c-tutorial/tree/master/standard-library)
 - [Data Structure](https://github.com/YogaPan/c-tutorial/tree/master/data-structure)
+- [Algorithm](https://github.com/YogaPan/c-tutorial/tree/master/algorithm)
 - [Unix System Call](https://github.com/YogaPan/c-tutorial/tree/master/system-call)
 - [Unix Socket](https://github.com/YogaPan/c-tutorial/tree/master/socket)
 - [Kernel Build](https://github.com/YogaPan/c-tutorial/tree/master/kernel-build)
