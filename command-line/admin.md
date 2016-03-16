@@ -22,17 +22,29 @@ sudo shutdown -r +5   # Reboot 5 minutes later
 ## User
 ```sh
 passwd username                 # change your password
+
+# All skelton in /etc/skel/
 sudo adduser username           # add new user
 sudo adduser username groupname # Add group to user
 sudo adduser yogapan sudo       # Add yogapan sudoer
 
 groups                          # See you are in which groups
 
+# Change username
 usermod -l newUsername oldUsername
 usermod -d /home/newHomeDir -m newUsername
 
-sudo deluser temporary
-sudo rm -r /home/temporary
+# Change uid
+usermod -u 1020 username
+
+# group
+usermod -G root,yoga username
+
+# Change expiration time
+usermod -e 2020/12/31 username
+
+sudo deluser username     # Delete user
+sudo deluser -r username  # Delete user and his home directory
 ```
 
 ```passwd
@@ -66,8 +78,27 @@ root:$6$R/sHak3K$rt3WyOAz7NwvQZqx1dgyfuod6pgh763EoGnURnazWsQYtgHHHGQ9i1wPGXARsxf
    an absolute date specifying when the login may no longer be used.
 9. reserved field
 
+```sh
+sudo chage username  # change user password expiry information
+chage -l username    # list user password expiry information
+```
+
+### enable password shadow
+```sh
+pwconv    # This is default
+pwunconv
+```
+
 - http://www.cyberciti.biz/faq/understanding-etcshadow-file/
 - http://blogger.gtwang.org/2013/03/linux-etcshadow.html
+- http://blog.xuite.net/rockmansyz/twblog/115535151-LINUX+%E4%BD%BF%E7%94%A8%E8%80%85%E5%B8%B3%E6%88%B6%E8%88%87%E7%BE%A4%E7%B5%84%E7%AE%A1%E7%90%86
+
+## Hostname
+```sh
+hostname                   # Show hostname
+sudo vim /etc/hostname     # Change hostname
+sudo shutdown -r now       # Have to reboot to see result
+```
 
 ## Cron
 | command    | descrption       |
