@@ -21,14 +21,20 @@ sudo shutdown -r +5   # Reboot 5 minutes later
 
 ## User
 ```sh
-passwd username                 # change your password
-
+# All default settings in /etc/default/useradd
 # All skelton in /etc/skel/
-sudo adduser username           # add new user
+# All user in /etc/passwd
+# All passwd and expiry in /etc/shadow
+# All group in /etc/group
+
+sudo adduser [-unqGmMd] username
+# u: uid
+# d: home directory
+# m: need home directory
+# M: no home directory
+
 sudo adduser username groupname # Add group to user
 sudo adduser yogapan sudo       # Add yogapan sudoer
-
-groups                          # See you are in which groups
 
 # Change username
 usermod -l newUsername oldUsername
@@ -43,8 +49,17 @@ usermod -G root,yoga username
 # Change expiration time
 usermod -e 2020/12/31 username
 
+sudo passwd username            # change your password
+sudo passwd -l username         # lock user
+sudo passwd -u username         # unlock user
+
 sudo deluser username     # Delete user
 sudo deluser -r username  # Delete user and his home directory
+
+# user imformation
+id
+groups
+
 ```
 
 ```passwd
@@ -92,7 +107,7 @@ pwunconv
 - http://www.cyberciti.biz/faq/understanding-etcshadow-file/
 - http://blogger.gtwang.org/2013/03/linux-etcshadow.html
 - http://blog.xuite.net/rockmansyz/twblog/115535151-LINUX+%E4%BD%BF%E7%94%A8%E8%80%85%E5%B8%B3%E6%88%B6%E8%88%87%E7%BE%A4%E7%B5%84%E7%AE%A1%E7%90%86
-
+- http://dywang.csie.cyut.edu.tw/dywang/linuxSystem/node58.html
 ## Hostname
 ```sh
 hostname                   # Show hostname
