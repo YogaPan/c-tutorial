@@ -43,3 +43,7 @@ strace -p pid -T
 ## Objdump
 ```sh
 ```
+
+## nm
+```sh
+```
