@@ -26,12 +26,48 @@ sudo adduser username           # add new user
 sudo adduser username groupname # Add group to user
 sudo adduser yogapan sudo       # Add yogapan sudoer
 
+groups                          # See you are in which groups
+
 usermod -l newUsername oldUsername
 usermod -d /home/newHomeDir -m newUsername
 
 sudo deluser temporary
 sudo rm -r /home/temporary
 ```
+
+```passwd
+# /etc/passwd
+# 644
+# user:passwd:uid:gid:comment:home:shell
+
+root:x:0:0:root:/root:/bin/bash
+sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin  # uid < 500 is used by system
+yoga:x:1000:1000::/home/vagrant:/usr/bin/zsh       # comment is not required
+```
+
+```shadow
+# /etc/shadow
+# 400
+
+root:$6$R/sHak3K$rt3WyOAz7NwvQZqx1dgyfuod6pgh763EoGnURnazWsQYtgHHHGQ9i1wPGXARsxflR30Dw9e4ecGXrElLPGiWH.:16855:0:99999:7:::
+```
+1. login name
+2. encrypted password
+3. date of last password change: count from 1/1/1970.
+4. minimum password age: The minimum number of days required between password
+   changes, default is 0, means don't care.
+5. maxmum password age: The maximum number of days the password is valid.
+   default is 99999, means this password is always valid.
+6. password warning period: The number of days before password is to expire that
+   user is warned that his/her password must be changed. default is 7.
+7. password inactivity period: The number of days after password expires that
+   account is disabled.
+8. account expiration date: days since Jan 1, 1970 that account is disabled i.e.
+   an absolute date specifying when the login may no longer be used.
+9. reserved field
+
+- http://www.cyberciti.biz/faq/understanding-etcshadow-file/
+- http://blogger.gtwang.org/2013/03/linux-etcshadow.html
 
 ## Cron
 | command    | descrption       |
