@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-int main(int argc, char **argv)
+int main(void)
 {
 	char cwd1[256];
 	char *cwd2;
