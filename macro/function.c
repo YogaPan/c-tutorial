@@ -4,9 +4,9 @@
 
 #define sub(x, y) \
 (int)({ \
-	 typeof(x) __tmp; \
-	 __tmp = (x) - (y); \
-	 __tmp; \
+	 typeof(x) __ret; \
+	 __ret = (x) - (y); \
+	 __ret; \
 })
 
 #define swap(x, y) \
