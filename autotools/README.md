@@ -77,8 +77,8 @@ make uninstall
 
 ### clean
 ```sh
-make clean  # .a .o and exetable files.
-make cleandist  # clean files that generate by ./configure
+make clean      # .a .o and exetable files.
+make distclean  # clean files that generate by ./configure
 ```
 
 ### tarball
