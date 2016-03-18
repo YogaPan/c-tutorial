@@ -12,16 +12,18 @@ static int __init task_init(void)
 
 	printk(KERN_INFO "task load\n");
 
-	/* Find kthreadd task by PID */
 	kthreadd_task = pid_task(find_vpid(KTHREADD_PID), PIDTYPE_PID);
 	printk(KERN_INFO "Process name: %s\n", kthreadd_task->comm);
 
-	/* Iterate over all children of kthreadd_task */
 	list_for_each(list, &kthreadd_task->children) {
-		/* Get next child */
 		task = list_entry(list, struct task_struct, sibling);
 		printk(KERN_INFO "    Child name: %s\n", task->comm);
 	}
+
+	for_each_process(task)
+		printk(KERN_INFO "%s\n", task->comm);
+
+	printk(KERN_INFO "\ncurrent process: %s\n", current->comm);
 
 	return 0;
 }
