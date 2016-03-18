@@ -69,5 +69,5 @@ _start:
 ```
 
 ## Link
-[X86 Assembly/Interfacing with Linux](https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux)
-[Using Inline Assembly in C/C++](http://www.codeproject.com/Articles/15971/Using-Inline-Assembly-in-C-C)
+- [X86 Assembly/Interfacing with Linux](https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux)
+- [Using Inline Assembly in C/C++](http://www.codeproject.com/Articles/15971/Using-Inline-Assembly-in-C-C)
