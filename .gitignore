@@ -5,6 +5,11 @@
 !README
 
 tags
+config.h
+config.h.in
+# Makefile.in
+.deps/
+autotools/**/Makefile
 .DS_STORE
 .tmp_versions
 .vagrant/
@@ -15,3 +20,9 @@ tags
 *.order
 *.symvers
 *.cmd
+*.a
+*.in
+*.log
+*.status
+*.cache/
+*.m4
