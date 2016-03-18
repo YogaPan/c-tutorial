@@ -7,7 +7,7 @@
 tags
 config.h
 config.h.in
-# Makefile.in
+Makefile.in
 .deps/
 autotools/**/Makefile
 .DS_STORE
