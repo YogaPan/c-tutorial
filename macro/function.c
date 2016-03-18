@@ -2,11 +2,12 @@
 
 #define add(x, y) ((x) + (y))
 
-#define swap(x, y) do { \
-	x ^= y;         \
-	y ^= x;         \
-	x ^= y;         \
-} while (0)
+#define swap(x, y) \
+({ \
+	x ^= y; \
+	y ^= x; \
+	x ^= y; \
+})
 
 int main(void)
 {

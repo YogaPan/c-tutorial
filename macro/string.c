@@ -1,16 +1,17 @@
 #include <stdio.h>
 
-#define PRINT_VAR(var)                 \
+#define PRINT_VAR(var) \
 	printf("%s=%d\n", #var, var)
 
-#define UNDERLINE_VAR(var)             \
+#define UNDERLINE_VAR(var) \
 	int _##var
 
-#define PRINT_RED(str, ...) do {        \
-	printf("\x1b[31m");            \
-	printf(str, ##__VA_ARGS__);           \
-	printf("\033[0m");             \
-} while (0)
+#define PRINT_RED(str, ...) \
+({ \
+	printf("\x1b[31m"); \
+	printf(str, ##__VA_ARGS__); \
+	printf("\033[0m"); \
+})
 
 int main(void)
 {
