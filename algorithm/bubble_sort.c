@@ -2,13 +2,6 @@
 
 #define ARRAY_SIZE 10
 
-/* #define swap(x, y) \ */
-/* ({ \ */
-	/* x ^= y; \ */
-	/* y ^= x; \ */
-	/* x ^= y; \ */
-/* }) */
-
 #define swap(x, y) \
 ({ \
 	typeof(x) __tmp = (x); \
