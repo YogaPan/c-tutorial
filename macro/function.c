@@ -2,11 +2,18 @@
 
 #define add(x, y) ((x) + (y))
 
+#define sub(x, y) \
+(int)({ \
+	 typeof(x) __tmp; \
+	 __tmp = (x) - (y); \
+	 __tmp; \
+})
+
 #define swap(x, y) \
 ({ \
-	x ^= y; \
-	y ^= x; \
-	x ^= y; \
+	typeof(x) __tmp = (x); \
+	(x) = (y); \
+	(y) = __tmp; \
 })
 
 int main(void)
@@ -20,6 +27,9 @@ int main(void)
 	printf("x=%d y=%d\n", x, y);
 	swap(x, y);
 	printf("x=%d y=%d\n", x, y);
+
+	answer = sub(x, y);
+	printf("x-y=%d\n", answer);
 
 	answer = add(x, y);
 	printf("x+y=%d\n", answer);
