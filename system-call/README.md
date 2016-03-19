@@ -73,6 +73,9 @@ int
 dup2(int fildes, int fildes2);
 
 int
+pipe(int pipefd[2]);
+
+int
 close(int fildes);
 
 ```
@@ -268,6 +271,13 @@ popen(const char *command, const char *mode);
 
 int
 pclose(FILE *stream);
+```
+
+```C
+#include <sys/wait.h>
+
+int status;
+wait(&status);
 ```
 
 
