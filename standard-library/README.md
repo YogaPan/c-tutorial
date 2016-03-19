@@ -224,7 +224,7 @@ strcspn(const char *s1, const char *s2);
 /* Example usage */
 char str[] = "fcba73";
 char keys[] = "1234567890";
-int i = strcspn (str, keys);  /* i = 5 */
+int i = strcspn (str, keys);  /* i = 4 */
 
 char *
 strtok(char *s1, const char *s1);
