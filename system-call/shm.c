@@ -26,7 +26,7 @@ int main(void)
 	} else {
 		wait(&status);
 		printf("%d\n", *glob_var);
-		munmap(glob_var, sizeof(glob_var));
+		munmap(glob_var, sizeof(*glob_var));
 	}
 
 	return 0;
