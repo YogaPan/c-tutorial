@@ -1,5 +1,10 @@
 ## Challenge1
 
+## Prepare
+```sh
+sudo apt-get install linux-headers-`uname -r`
+```
+
 # See your result
 ```sh
 $ make
