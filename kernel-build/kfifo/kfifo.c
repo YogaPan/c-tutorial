@@ -10,9 +10,9 @@ static char buffer[BUF_SIZE];
 
 static int __init queue_init(void)
 {
-	int               i;
-	unsigned int      ret;
-	unsigned int      val;
+	int          i;
+	unsigned int ret;
+	unsigned int val;
 
 	printk(KERN_INFO "FIFO start\n");
 
