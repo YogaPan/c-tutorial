@@ -12,12 +12,12 @@
 
 int main(void)
 {
-	int ret;
-	const void *addr;
-	const char *ipver;
-	char ipstr[INET6_ADDRSTRLEN];
-	struct addrinfo hints;
-	struct addrinfo *res, *p;
+	int              ret;
+	char	         ipstr[INET6_ADDRSTRLEN];
+	const void       *addr;
+	const char       *ipver;
+	struct addrinfo  hints;
+	struct addrinfo  *res, *p;
 
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family   = AF_UNSPEC;
