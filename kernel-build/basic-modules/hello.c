@@ -3,13 +3,13 @@
 
 static int __init hello_init(void)
 {
-	printk(KERN_DEBUG "Hello World!\n");
+	pr_info("Hello!\n");
 	return 0;
 }
 
 static void __exit hello_exit(void)
 {
-	printk(KERN_DEBUG "Good Bye.\n");
+	pr_info("Good Bye!\n");
 }
 
 module_init(hello_init);
