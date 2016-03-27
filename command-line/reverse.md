@@ -42,8 +42,15 @@ strace -p pid -T
 
 ## Objdump
 ```sh
+objdump -S file.o
 ```
 
 ## nm
 ```sh
+nm -A file.o
+```
+
+## readelf
+```sh
+readrlf -h executable
 ```
