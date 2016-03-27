@@ -50,6 +50,11 @@ objdump -S file.o
 nm -A file.o
 ```
 
+T: Defined function
+U: Undefined symbol
+D: data
+B: bss
+
 ## readelf
 ```sh
 readrlf -h executable
