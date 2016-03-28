@@ -1,42 +1,67 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
 #include <pthread.h>
+#include <unistd.h>
 
-void *show_message(void *ptr)
+/* you can just comment this line and see what will happen. */
+#define USE_MUTEX
+
+#ifdef USE_MUTEX
+static pthread_mutex_t mutex;
+#endif
+static int number;
+
+static void *producer(void *param)
 {
 	int i;
-	const char *message1;
-	char *message2;
-	message1 = (char *)ptr;
 
-	for (i = 0; i < 5; i++) {
-		printf("%s\n", message1);
-		sleep(1);
-		usleep(1);
-	}
-	message2 = (char *)malloc(sizeof(char) * 10);
-	strcpy(message2, "ass");
-	pthread_exit((void *)message2);
+#ifdef USE_MUTEX
+	pthread_mutex_lock(&mutex);
+#endif
+	printf("I'm in critical\n");
+	for (i = 0; i < 1000000; i++)
+		number++;
+	printf("I'm out\n");
+
+#ifdef USE_MUTEX
+	pthread_mutex_unlock(&mutex);
+#endif
+	pthread_exit(0);
 }
 
-int main(int argc, char **argv)
+static void *consumer(void *param)
 {
-	pthread_t thread1, thread2;
-	const char *message1 = "Thread 1";
-	const char *message2 = "Thread 2";
-	void *ret1, *ret2;
+	int i;
 
-	pthread_create(&thread1, NULL, show_message, (void *)message1);
-	pthread_create(&thread2, NULL, show_message, (void *)message2);
-	printf("haha I work in same time.\n");
-	pthread_join(thread1, &ret1);
-	pthread_join(thread2, &ret2);
-	printf("return value from thread1 = %s\n", (char *)ret1);
-	printf("return value from thread2 = %s\n", (char *)ret2);
-	free(ret1);
-	free(ret2);
+#ifdef USE_MUTEX
+	pthread_mutex_lock(&mutex);
+#endif
+	printf("I'm in critical\n");
+	for (i = 0; i < 1000000; i++)
+		number--;
+	printf("I'm out\n");
+#ifdef USE_MUTEX
+	pthread_mutex_unlock(&mutex);
+#endif
+	pthread_exit(0);
+}
+
+int main(void)
+{
+	pthread_attr_t attr;
+	pthread_t producer_tid, consumer_tid;
+
+	pthread_attr_init(&attr);
+#ifdef USE_MUTEX
+	pthread_mutex_init(&mutex, NULL);
+#endif
+
+	pthread_create(&producer_tid, &attr, consumer, NULL);
+	pthread_create(&consumer_tid, &attr, producer, NULL);
+
+	pthread_join(producer_tid, NULL);
+	pthread_join(consumer_tid, NULL);
+
+	printf("%d\n", number);
 
 	return 0;
 }
