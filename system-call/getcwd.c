@@ -17,5 +17,6 @@ int main(void)
 	cwd2 = getcwd(NULL, 0);
 	printf("%s\n", cwd2);
 	free(cwd2);
+
 	return 0;
 }
