@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+#define FALSE 0
+#define TRUE 1
+
 #define ARRAY_SIZE 10
 
 #define swap(x, y) \
@@ -9,7 +12,21 @@
 	(y) = __tmp; \
 })
 
-void bubble_sort(int *arr);
+static void bubble_sort(int *arr)
+{
+	int i, j;
+	int flags = TRUE;
+
+	for (i = 0; i < ARRAY_SIZE - 1 && flags; i++) {
+		for (j = 0; j < ARRAY_SIZE - i - 1; j++) {
+			flags = FALSE;
+			if (arr[j] > arr[j+1]) {
+				swap(arr[j], arr[j+1]);
+				flags = TRUE;
+			}
+		}
+	}
+}
 
 int main(void)
 {
@@ -19,20 +36,8 @@ int main(void)
 	bubble_sort(arr);
 
 	for (i = 0; i < ARRAY_SIZE; i++)
-		printf("%d\n", arr[i]);
+		printf("%d ", arr[i]);
+	printf("\n");
 
 	return 0;
-}
-
-void bubble_sort(int *arr)
-{
-	int i;
-	int j;
-
-	for (i = 0; i < ARRAY_SIZE - 1; i++) {
-		for (j = 0; j < ARRAY_SIZE - i - 1; j++) {
-			if (arr[j] > arr[j+1])
-				swap(arr[j], arr[j+1]);
-		}
-	}
 }
