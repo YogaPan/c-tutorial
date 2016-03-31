@@ -35,6 +35,7 @@ sudo adduser [-unqGmMd] username
 
 sudo adduser username groupname # Add group to user
 sudo adduser yogapan sudo       # Add yogapan sudoer
+sudo adduser yogapan admin      # Add yogapan administrator
 
 # Change username
 usermod -l newUsername oldUsername
@@ -53,13 +54,25 @@ sudo passwd username            # change your password
 sudo passwd -l username         # lock user
 sudo passwd -u username         # unlock user
 
-sudo deluser username     # Delete user
-sudo deluser -r username  # Delete user and his home directory
+sudo deluser username                # Delete user
+sudo deluser username --remove-home  # Delete user and his home directory
 
 # user imformation
 id
 groups
 
+```
+
+Sudo without password
+```
+$ sudo visudo
+
+%admin  ALL=(ALL) ALL
+
+# Change to
+%admin  ALL=(ALL) NOPASSWD:ALL
+
+$sudo adduser username admin
 ```
 
 ```passwd
