@@ -36,3 +36,7 @@ __FILE__
 
 #define
 ```
+
+# LINK
+
+[GNU: The C Preprocessor 導讀](http://wen00072-blog.logdown.com/posts/146624-talk-about-c-macros)
