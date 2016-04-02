@@ -398,4 +398,3 @@ va_end(va_list ap);
 
 ## Learning resource
 - [cplusplus.com](http://www.cplusplus.com/reference/)
-- [The Lost Art of C Structure Packing](GNU: The C Preprocessor 導讀
