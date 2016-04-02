@@ -8,6 +8,7 @@ int main(int argc, const char **argv)
 	DIR *dir;
 	struct dirent *entry;
 	const char *filename;
+
 	if (argc != 2) {
 		fprintf(stderr, "usage: dir dirname\n");
 		exit(1);
@@ -21,5 +22,6 @@ int main(int argc, const char **argv)
 	while ((entry = readdir(dir)) != NULL)
 		printf("%s\n", entry->d_name);
 	closedir(dir);
+
 	return 0;
 }

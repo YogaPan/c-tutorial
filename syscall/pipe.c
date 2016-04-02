@@ -40,6 +40,5 @@ int main(void)
 		close(fd[READ_END]);
 	}
 
-
 	return 0;
 }
