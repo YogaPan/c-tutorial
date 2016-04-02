@@ -37,6 +37,9 @@ __FILE__
 #define
 ```
 
-# LINK
+```sh
+$ cpp file.c
+```
 
-[GNU: The C Preprocessor 導讀](http://wen00072-blog.logdown.com/posts/146624-talk-about-c-macros)
+# LINK
+- [GNU: The C Preprocessor 導讀](http://wen00072-blog.logdown.com/posts/146624-talk-about-c-macros)
