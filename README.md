@@ -2,10 +2,10 @@
 
 ## All Topic
 
-- [GCC and Make](https://github.com/YogaPan/c-tutorial/tree/master/gcc-and-make)
+- [GCC and Make](https://github.com/YogaPan/c-tutorial/tree/master/basic/gcc-and-make)
 - [Autotools](https://github.com/YogaPan/c-tutorial/tree/master/autotools)
-- [Macro](https://github.com/YogaPan/c-tutorial/tree/master/macro)
-- [Standard Library](https://github.com/YogaPan/c-tutorial/tree/master/standard-library)
+- [Macro](https://github.com/YogaPan/c-tutorial/tree/master/basic/macro)
+- [Standard Library](https://github.com/YogaPan/c-tutorial/tree/master/basic/stlib)
 - [Data Structure](https://github.com/YogaPan/c-tutorial/tree/master/data-structure)
 - [Algorithm](https://github.com/YogaPan/c-tutorial/tree/master/algorithm)
 - [Unix System Call](https://github.com/YogaPan/c-tutorial/tree/master/system-call)
