@@ -5,4 +5,4 @@ exec = $(basename $(wildcard *.c))
 all: $(exec)
 
 clean:
-	rm -rf $(exex)
+	rm -rf $(exec)
