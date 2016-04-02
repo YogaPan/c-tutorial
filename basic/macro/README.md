@@ -39,6 +39,8 @@ __FILE__
 
 ```sh
 $ cpp file.c
+$ gcc -e file.c
+$ gcc -M file.c
 ```
 
 # LINK
