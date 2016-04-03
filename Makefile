@@ -29,4 +29,4 @@ clean:
 	make -C algorithm clean
 
 format:
-	astyle --style=linux --indent=tab --pad-oper --pad-header --suffix=none *.[ch]
+	astyle --style=linux --indent=tab --pad-oper --pad-header --suffix=none --recursive --dry-run "*.c" "*.h"
