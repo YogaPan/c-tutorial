@@ -9,6 +9,8 @@ sudo apt-get install package-name
 sudo apt-get remove package-name
 sudo apt-get autoremove
 
+apt-cache search package-name
+
 dpkg --get-selections | grep -v deinstall
 apt --installed list
 ```
