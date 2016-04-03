@@ -27,9 +27,9 @@ git pull origin master
 git fetch origin master
 git merge origin/master
 
-git branch
-git branch -a
-git branch -r
+git branch              # Local
+git branch -a           # All
+git branch -r           # Remote
 git branch new-branch
 
 git checkout new-branch
@@ -44,3 +44,18 @@ git am
 git remote -v
 git remote add
 ```
+
+## Hooks
+
+- pre-commit
+- post-commit
+- pre-applypatch
+- post-applypatch
+
+```sh
+# In .git/hooks/ directory
+ln -sf ../../scripts/pre-commit.hook pre-commit
+```
+
+## Links
+- https://git-scm.com/doc
