@@ -59,3 +59,37 @@ B: bss
 ```sh
 readrlf -h executable
 ```
+
+## gdb
+
+```sh
+$ gcc -g main.c -o main
+$ gdb main
+```
+
+run
+start
+
+list
+frame
+
+next
+step
+
+break 13
+continue
+
+print a
+print $rax
+set a = 3
+
+info locals
+info registers
+info stack
+
+disas
+
+## valgrind
+```
+
+```
