@@ -27,3 +27,6 @@ clean:
 	make -C asm clean
 	make -C basic/macro clean
 	make -C algorithm clean
+
+format:
+	astyle --style=linux --indent=tab --pad-oper --pad-header --suffix=none *.[ch]
