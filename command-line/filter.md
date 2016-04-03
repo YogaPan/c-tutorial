@@ -157,6 +157,7 @@ sed '3,$ s/abc/zxc/g' filename
 
 ## awk
 ```sh
+awk -v start="$start" end="$end" '{ if ($1 >= start && $1 <= end) print }' test.txt
 ```
 
 ## Find
