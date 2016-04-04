@@ -1,6 +1,9 @@
 1.1 Install Django and Start project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+django official documentation: https://www.djangoproject.com/
+django git repo: https://github.com/django/django
+
 Install django:
 
         $ pip3 install django
@@ -19,7 +22,7 @@ Project structure:
             ├── urls.py
             └── wsgi.py
 
-Run server:
+Start server:
 
         $ python3 manage.py runserver 0.0.0.0:8080
 
