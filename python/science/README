@@ -172,8 +172,17 @@ Basic usage:
         plt.grid(True)
         plt.savefig('test.png')
 
+1.3 Pandas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.3 Sklearn
+Pandas official documentation: http://pandas.pydata.org/pandas-docs/stable/10min.html
+Pandas git repo: https://github.com/pydata/pandas
+
+# TODO
+# TODO
+
+
+1.4 Sklearn
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sklearn official documentation: http://scikit-learn.org/stable/documentation.html
@@ -189,7 +198,7 @@ Install sklearn:
         $ sudo pip3 install sklearn
 
 
-1.4 Tensorflow
+1.5 Tensorflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Tensorflow official documentation: https://www.tensorflow.org/versions/r0.7/get_started/index.html
