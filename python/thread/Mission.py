@@ -1,6 +1,6 @@
+import time
 from threading import Thread
 from queue import Queue
-import time
 
 class Mission:
     def __init__(self, max_thread):
@@ -29,6 +29,13 @@ class Mission:
             except queue.Empty:
                 pass
 
+def sleep(sec):
+    print("start")
+    print(sec)
+    time.sleep(sec)
+    print("end")
+    print(sec)
+
 def mission_test():
     with Mission(5) as m:
         m.send_task(sleep, 5)
@@ -37,12 +44,5 @@ def mission_test():
         m.send_task(sleep, 2)
         m.send_task(sleep, 1)
         m.send_task(sleep, 1)
-
-def sleep(sec):
-    print("start")
-    print(sec)
-    time.sleep(sec)
-    print("end")
-    print(sec)
 
 mission_test()
