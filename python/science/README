@@ -1,9 +1,8 @@
 1.1 Numpy
----------------
+~~~~~~~~~~~~~~~~~~~~~~
 
-Numpy official doc:
-
-        https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
+Numpy official documentation: https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
+Numpy git repo: https://github.com/numpy/numpy
 
 First you have to install numpy package:
 
@@ -133,7 +132,10 @@ Slice and Index:
 
 
 1.2 Matplotlib
-------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Matplotlib official documentation: http://matplotlib.org/devdocs/contents.html
+Matplotlib git repo: https://github.com/matplotlib/matplotlib
 
 Install matplotlib package:
 
@@ -167,13 +169,22 @@ Basic usage:
         plt.savefig('test.png')
 
 1.3 Sklearn
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Sklearn official documentation: http://scikit-learn.org/stable/documentation.html
+Sklearn git repo: https://github.com/scikit-learn/scikit-learn
 
 Install dependencies:
+
         $ sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran
         $ sudo pip3 install scipy
 
 Install sklearn:
 
         $ sudo pip3 install sklearn
+
+1.4 Tensorflow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tensorflow official documentation: https://www.tensorflow.org/versions/r0.7/get_started/index.html
+Tensorflow git repo: https://github.com/tensorflow/tensorflow
