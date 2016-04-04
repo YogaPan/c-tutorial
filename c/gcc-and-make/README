@@ -1,7 +1,8 @@
-GNU Compiler Collection(GCC)
-============================
+1.1 GNU Compiler Collection(GCC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Options:
+
         -c         Compile and assembly but not link, this will generate *.o files.
         -o         Place the output input file.
         -w         Don't show any warnings.
@@ -15,16 +16,16 @@ Options:
         -llibrary  Link library.
         -Ldir      Add librarys search paths.
 
-LINK:
+Link:
 
 - http://a7419.pixnet.net/blog/post/57931682-gcc%E5%8F%83%E6%95%B8%E8%A9%B3%E8%A7%A3
 - http://changhoward.blogspot.tw/2009/02/using-gcc-to-create-static-and-shared.html
 
 
-Makefile
-========
+1.2 Makefile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-VARIABLES:
+variables:
 
         VAR1  = VAR2            If VAR2 change, VAR1 will change too.
         VAR1 := VAR2            If VAR2 change, VAR1 will keep the origin value.
@@ -32,7 +33,7 @@ VARIABLES:
         VAR1 += VAR2            Add string into VAR1.
         echo $(VAR)             Get value.
 
-The basic format is:
+Basic format:
 
         target: prerequisites
             commands
@@ -53,7 +54,7 @@ Root target depends on sub-targets.
     sub_target2:
             @echo $@
 
-SYMBOLS:
+Symbol:
 
         $@              Target.
         $^              Prerequisites.
@@ -61,7 +62,7 @@ SYMBOLS:
         $?              Newer than target's prerequisites.
 
 
-FUNCTIONS:
+Function:
 
         $(warning message)
         $(error message)
@@ -71,7 +72,7 @@ FUNCTIONS:
         $(subst from,to,string)
         $(patsubst patter,dest,str)
 
-CONDITION:
+Condition:
 
         ifeq($(name),Yoga)
                 command1
