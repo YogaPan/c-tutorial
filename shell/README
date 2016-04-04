@@ -1,10 +1,12 @@
+1.1 Basic syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 In the head of shell script file, you should specify which "shell"
 you want to use:
 
         #!/bin/bash
 
-DOLLAR PARAMETER
-================
+Dollar sign paremeter:
 
         $*          Complete set of positional parameters as a single string.
         $#          Number of argument.
@@ -15,15 +17,13 @@ DOLLAR PARAMETER
         $$          Pid of current shell
         $!          Pid of last background job.
 
-EXIT
-====
+exit:
 
         exit            Default value is 0.
         exit 0          Everything is nice.
         exit 1          Something goes wrong.
 
-CONDITION
-=========
+condition:
 
         cmd1 && cmd2        cmd2 execute if cmd1 success.
         cmd1 || cmd2        cmd2 execute if cmd1 fail.
@@ -53,10 +53,6 @@ CONDITION
           pattern2) command ;;
                  *) default command
         esac
-
-
-TEST
-====
 
 "test" can used to check number, string and file.
 
@@ -96,29 +92,31 @@ File Attributes:
         -u file         file exists and has SUID bit set.
         -k file         file exists and has sticky bit set.
 
-Function
-=============
+Function:
 
-function fname() {
-  command1
-  command2
-}
+        function fname() {
+          command1
+          command2
+        }
 
-Array
-================
-name=(yoga shuo ha47 caspar)
+Array:
 
-Some technique
-=============
+        name=(yoga shuo ha47 caspar)
 
-read a
-x=6; y=2
-z=`expr $x + $y`;
-basename hello.java .java       This will return hello string.
-echo "abc" > /dev/null 2>&1
+1.2 Some Technique
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-LINK
-===========
+Get user input:
+
+        read a
+
+Calculate:
+
+        x=6; y=2
+        z=`expr $x + $y`;
+
+1.3 Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - http://linux.vbird.org/linux_basic/0340bashshell-scripts.php
 - https://sites.google.com/site/tiger2000/
