@@ -1,3 +1,7 @@
+Python Science
+=======================
+
+
 1.1 Numpy
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -10,7 +14,7 @@ First you have to install numpy package:
 
 Import numpy package:
 
-        import numpy as np
+        >>> import numpy as np
 
 How to create a numpy array and some basic attributes:
 
@@ -148,11 +152,11 @@ Setting matplotlibrc:
         '/etc/matplotlibrc'
         $ sudo vim /etc/matplotlibrc
 
-Find backend and change to Agg
+Find backend and change to Agg:
 
         backend      : Agg
 
-About More imformation you can see
+More customizing option you can see
 http://matplotlib.org/users/customizing.html#customizing-matplotlib
 
 Import matplotlib:
@@ -168,6 +172,7 @@ Basic usage:
         plt.grid(True)
         plt.savefig('test.png')
 
+
 1.3 Sklearn
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -182,6 +187,7 @@ Install dependencies:
 Install sklearn:
 
         $ sudo pip3 install sklearn
+
 
 1.4 Tensorflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

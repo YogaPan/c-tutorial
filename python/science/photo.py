@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def draw():
+def main():
     a = np.array([1, 2, 3, 4])
     b = np.array([1, 4, 9, 16])
     plt.title('test.png')
@@ -11,4 +11,6 @@ def draw():
     plt.grid(True)
     plt.savefig('test.png')
 
-draw()
+
+if __name__ == '__main__':
+    main()
