@@ -56,5 +56,26 @@ return EOF.
 
 fscanf return EOF when reach End-Of-File, too.
 
+
 1.3 fseek and rewind
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Set the file position to the beginning of the file:
+
+	rewind(fp);
+	fseek(fp, 0, SEEK_SET);
+
+Move foreward 3 charactor:
+
+	fseek(fp, 3, SEEK_CUR);
+
+Set the file position to the end of the file:
+
+	fseek(fp, 0, SEEK_END);
+
+fseek options:
+
+	SEEK_SET: Count from the beginning of the file.
+	SEEK_CUR: Count from current position.
+	SEEK_END: Count from the end of the file.
+
