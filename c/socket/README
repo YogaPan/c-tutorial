@@ -189,9 +189,39 @@ Free addrinfo:
 
 	freeaddrinfo(servinfo);
 
+Operations:
 
-1.4 Sockets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	#include <sys/types.h>
+	#include <sys/socket.h>
+	#include <unistd.h>
 
-Declare variables:
+	int bind(int sockfd, struct sockaddr *my_addr, socklen_t addrlen);
+	int listen(int sockfd, int backlog);
+	int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 
+	bind(sockfd, res->ai_addr, res->ai_addrlen);
+	listen(sockfd, 20);
+	client_sock = accept(sockfd, (struct sockaddr *)&client_addr, &sizeof(addr_size));
+
+	int shutdown(int sockfd, int how);
+	/*
+	 * 0 不允許再接收資料
+	 * 1 不允許再傳送資料
+	 * 2 不允許再傳送與接收資料
+	 */
+
+Create server workflow:
+
+	getaddrinfo() -> socket() -> bind() -> listen() -> accept() -> close
+
+Make sure your port can use:
+
+	int yes = 1; /* solaris user: char yes = "1"; */
+	if (setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
+		perror("setsockopt");
+		exit(1);
+	}
+
+Link:
+- http://beej-zhtw-gitbook.netdpi.net/WhatIsSocket.html
+- https://github.com/cbsheng/tinyhttpd
