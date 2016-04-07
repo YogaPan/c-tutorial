@@ -1,0 +1,60 @@
+1.1 Open File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Include library:
+
+	#include <stdio.h>
+
+Declare FILE pointer:
+
+	FILE *fp;
+
+Open a file a return a FILE pointer:
+
+	fp = fopen("filename", "w");
+
+Open mode:
+
+	"r": Read only.
+	"w": write only. If file exists it will truncate the file.
+	"a": Append to the tail of the file.
+	"r+": Read and Write.
+	"w+": Read and Write. If file exists ti will truncate the file.
+
+Close file:
+
+	fclose(fp);
+
+
+1.2 Read and Write
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Write to file:
+
+	fprintf(fp, "My name is %s\n", name);
+	fputs(name, fp);
+	fputc('y', fp);
+
+Read from file:
+
+	fscanf(fp, "%s", name);
+	fgets(name, 30, fp);
+	ch = fgetc(fp);
+
+fgets will read whole line from file, and it can set max charactor you want to
+read. For example, I set buffer size to 30, This will prevent buffer overflow.
+
+But this function will read '\r' and '\n' also. So you can use the function
+below to delete these charactors:
+
+	buffer[strcspn(buffer, "\r\n")] = '\0';
+
+When fgets reach End-Of-File, it will retrun NULL pointer.
+
+fgetc read only one charactor in once, When fgetc read End-Of-FILE, it will
+return EOF.
+
+fscanf return EOF when reach End-Of-File, too.
+
+1.3 fseek and rewind
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
