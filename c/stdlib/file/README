@@ -56,6 +56,11 @@ return EOF.
 
 fscanf return EOF when reach End-Of-File, too.
 
+Before file close, the data might not be writed to file.
+If you want to write to file immediately before file close, you can use:
+
+	fflush(fp);
+
 
 1.3 fseek and rewind
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,4 +83,32 @@ fseek options:
 	SEEK_SET: Count from the beginning of the file.
 	SEEK_CUR: Count from current position.
 	SEEK_END: Count from the end of the file.
+
+
+1.4 Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Three file stream is open default:
+
+	stdin:  Input from standard input.
+	stdout: Output to standard output.
+	stderr: Print to Console.
+
+For example, you can use fprintf output to console, even standard output is
+redirected:
+
+	$ ./stderr_example > abc.txt
+
+will print to console:
+
+	"Hi, I will not go into abc.txt."
+
+stdout and stderr is line buffered, it means it will not print to console before
+meet '\n' charactor. if you want to print message immediately, use fflush:
+
+	fprintf(stdout, "I don't have new line charactor...");
+	fflush(stdout);
+	sleep(3)
+
+If no fflush, program will print nothing to console before wake up.
 
