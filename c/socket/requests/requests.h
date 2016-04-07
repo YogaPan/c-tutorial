@@ -2,15 +2,13 @@
 #define __REQUESTS_H__
 
 struct host {
-	char *name;
-	char *ip;
-	char *port;
+	const char *url;
+	const char *port;
+	char protocol[10];
+	char site[32];
+	char path[64];
+	char ip[INET6_ADDRSTRLEN];
 	int sockfd;
 };
 
-struct requests_operations {
-	void (*get)(const char *url);
-	void (*post)(const char *url);
-} requests;
-
-#endif /* end of include guard: __REQUESTS_H__ */
+#endif /*  __REQUESTS_H__ */
