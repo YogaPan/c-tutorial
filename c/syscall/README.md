@@ -199,70 +199,6 @@ fchmod(int fildes, mode_t mode_t);
 
 ```
 
-## Proccess
-```C
-#include <unistd.h>
-
-pid_t
-getpid(void);
-
-uid_t
-getuid(void);
-
-gid_t
-getgid(void);
-
-pid_t
-fork(void);
-
-/* Usage example */
-pid_t proc = fork()
-if (proc < 0) {
-        /* Failed to create child process. */
-} else if (proc == 0) {
-        /* In the child process. */
-} else {
-        /* In the parant process. */
-        /* proc = child pid */
-}
-
-unsigned int
-sleep(unsigned int second);
-
-extern char **environ;
-
-int
-execl(const char *path, const char *arg, ...);
-int
-execlp(const char *file, const char *arg, ...);
-int
-execle(const char *path, const char *arg, ..., char * const envp[]);
-int
-execv(const char *path, char *const argv[]);
-int
-execvp(const char *file, char *const argv[]);
-/* Above functions all implement by execve(). */
-int
-execve(const char *filename, char *const argv[], char *const envp[]);
-
-/* Example usage */
-execl("bin/ls", "ls", "-l", NULL); /* "ls" is the first argv */
-printf("This will not print if exec success.");
-
-/* "p" means you can execute your programs which in $PATH variable */
-execlp("ls", "ls", "-l", "-a", NULL);
-
-/* no "l" means you have to provide an array. */
-
-char *argv[] = { "ls", "-l", NULL };
-execvp("ls", argv);
-
-/* "e" means pass environment varialble to exec process. */
-char * const envp[] = { "AA=11", "BB=22", NULL };
-execle("./hello", "hello", NULL, envp);
-
-```
-
 ```C
 #include <stdio.h>
 
@@ -271,30 +207,6 @@ popen(const char *command, const char *mode);
 
 int
 pclose(FILE *stream);
-```
-
-```C
-#include <sys/wait.h>
-
-int status;
-wait(&status);
-```
-
-
-## Pthread
-```C
-#include <pthread.h>
-
-int
-pthread_create(pthread_t *thread, const pthread_attr_t *attr,
-               void *(*start_routine)(void *), void *arg);
-
-void
-pthread_exit(void *value_ptr);
-
-int
-pthread_join(pthread_t thread, void **value_ptr);
-
 ```
 
 ## Exit
