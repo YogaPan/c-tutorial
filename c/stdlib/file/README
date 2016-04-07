@@ -90,18 +90,17 @@ fseek options:
 
 Three file streams is opened default:
 
-	stdin:  Input from standard input.
-	stdout: Output to standard output.
-	stderr: Print to Console.
+	stdin:  Standard input.
+	stdout: Standard output.
+	stderr: Standard error.
 
-For example, you can use fprintf output to console, even standard output is
-redirected:
+stderr always print to console. For example, you can use fprintf output
+to console, even standard output is redirected:
 
+	fprintf(stderr, "Hi, I will not go into abc.txt.");
 	$ ./stderr_example > abc.txt
 
-will print to console:
-
-	"Hi, I will not go into abc.txt."
+will print to console.
 
 stdout and stderr is line buffered, it means it will not print to console before
 meet '\n' charactor. if you want to print message immediately, use fflush:
