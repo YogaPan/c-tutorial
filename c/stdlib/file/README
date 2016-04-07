@@ -88,7 +88,7 @@ fseek options:
 1.4 Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Three file stream is open default:
+Three file streams is opened default:
 
 	stdin:  Input from standard input.
 	stdout: Output to standard output.
