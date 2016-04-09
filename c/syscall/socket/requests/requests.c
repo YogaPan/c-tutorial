@@ -127,13 +127,8 @@ static void host_get(struct host *self)
 	}
 }
 
-int main(int argc, const char *argv[])
-{
-	struct host *h;
-
-	h = host_init(argv[1]);
-	host_get(h);
-	host_destroy(h);
-
-	return 0;
-}
+struct requests_operations Requests = {
+	.init    = host_init,
+	.get     = host_get,
+	.destroy = host_destroy,
+};
