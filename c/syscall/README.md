@@ -380,13 +380,7 @@ $ strace ./your-program
 ```
 
 ## Learning Resources
-- [簡介 fork, exec*, pipe, dup2](https://www.ptt.cc/bbs/b97902HW/M.1268932130.A.0CF.html)
-- [簡介 fork, exec*, dup2, pipe](https://www.ptt.cc/bbs/b97902HW/M.1268953601.A.BA9.html)
 - [簡介檔案系統 (File System)](https://www.ptt.cc/bbs/b97902HW/M.1270924592.A.668.html)
 - [簡介 link/stat/chdir/opendir](https://www.ptt.cc/bbs/b97902HW/M.1270981044.A.909.html)
 - [linux stat函数讲解](http://www.cnblogs.com/hnrainll/archive/2011/05/11/2043361.html)
-- [进程生命周期与PCB（进程控制块）](https://github.com/YogaPan/c-tutorial/tree/master/system-call)
-- [进程复制fork，孤儿进程，僵尸进程](http://www.cnblogs.com/mickole/p/3186441.html)
 - [进程退出exit，_exit区别即atexit函数](http://www.cnblogs.com/mickole/p/3186606.html)
-- [exec系列函数（execl,execlp,execle,execv,execvp)使用](http://www.cnblogs.com/mickole/p/3187409.html)
-- [守护进程详解及创建，daemon()使用](http://www.cnblogs.com/mickole/p/3188321.html)
