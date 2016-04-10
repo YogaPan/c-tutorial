@@ -6,6 +6,11 @@ Install perf:
         $ sudo apt-get install linux-tools-common
         $ sudo apt-get install linux-tools-`uname -r` linux-cloud-tools-`uname -r`
 
+Basic usage:
+
+        $ sudo perf top
+        $ sudo perf top -p $pid
+
 
 1.2 Link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
