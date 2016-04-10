@@ -56,10 +56,10 @@ If pid greater then 0, the pid is the process id of the chind process.
 	}
 
 The wait() system call suspends execution of the calling process until
-one of its children terminates.
+one of its children terminates. Wait return child's pid, If error occured, return -1;
 
-	ret = wait(&status);
-	if (ret == -1)
+	pid = wait(&status);
+	if (pid == -1)
 		perror("wait")
 
 
