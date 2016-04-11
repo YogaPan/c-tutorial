@@ -6,7 +6,7 @@
 #define USE_MUTEX
 
 #ifdef USE_MUTEX
-static pthread_mutex_t mutex;
+static pthread_mutex_t lock;
 #endif
 static int number;
 
@@ -15,7 +15,7 @@ static void *producer(void *param)
 	int i;
 
 #ifdef USE_MUTEX
-	pthread_mutex_lock(&mutex);
+	pthread_mutex_lock(&lock);
 #endif
 	printf("I'm in critical\n");
 	for (i = 0; i < 1000000; i++)
@@ -23,9 +23,9 @@ static void *producer(void *param)
 	printf("I'm out\n");
 
 #ifdef USE_MUTEX
-	pthread_mutex_unlock(&mutex);
+	pthread_mutex_unlock(&lock);
 #endif
-	pthread_exit(0);
+	pthread_exit(NULL);
 }
 
 static void *consumer(void *param)
@@ -33,30 +33,28 @@ static void *consumer(void *param)
 	int i;
 
 #ifdef USE_MUTEX
-	pthread_mutex_lock(&mutex);
+	pthread_mutex_lock(&lock);
 #endif
 	printf("I'm in critical\n");
 	for (i = 0; i < 1000000; i++)
 		number--;
 	printf("I'm out\n");
 #ifdef USE_MUTEX
-	pthread_mutex_unlock(&mutex);
+	pthread_mutex_unlock(&lock);
 #endif
-	pthread_exit(0);
+	pthread_exit(NULL);
 }
 
 int main(void)
 {
-	pthread_attr_t attr;
 	pthread_t producer_tid, consumer_tid;
 
-	pthread_attr_init(&attr);
 #ifdef USE_MUTEX
-	pthread_mutex_init(&mutex, NULL);
+	pthread_mutex_init(&lock, NULL);
 #endif
 
-	pthread_create(&producer_tid, &attr, consumer, NULL);
-	pthread_create(&consumer_tid, &attr, producer, NULL);
+	pthread_create(&producer_tid, NULL, consumer, NULL);
+	pthread_create(&consumer_tid, NULL, producer, NULL);
 
 	pthread_join(producer_tid, NULL);
 	pthread_join(consumer_tid, NULL);
