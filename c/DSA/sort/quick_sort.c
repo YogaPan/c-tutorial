@@ -34,7 +34,7 @@ int main(void)
 	int i;
 	int array[ARRAY_SIZE] = { 1, 51, 23, 33, 55, 5, 91, 43, 7, 11 };
 
-	quick_sort(array, 0, 9);
+	quick_sort(array, 0, ARRAY_SIZE-1);
 	for (i = 0; i < ARRAY_SIZE; i++)
 		printf("%d ", array[i]);
 	printf("\n");

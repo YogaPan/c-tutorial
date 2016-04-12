@@ -172,6 +172,10 @@ Basic usage:
         plt.grid(True)
         plt.savefig('test.png')
 
+Link:
+        - http://www.cnblogs.com/wei-li/archive/2012/05/23/2506940.html
+
+
 1.3 Pandas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
