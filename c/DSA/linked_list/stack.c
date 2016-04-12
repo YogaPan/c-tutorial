@@ -2,10 +2,7 @@
 #include <stdlib.h>
 
 #define for_each_node(curr, stack) \
-	for (curr = stack->head; curr != NULL; curr = curr->next)
-
-#define for_each_node_safe(prev, curr, stack) \
-	for ()
+	for (curr = (stack)->head; curr != NULL; curr = curr->next)
 
 struct node {
 	int value;
