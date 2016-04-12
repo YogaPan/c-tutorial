@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
+#include "double_linked_list.h"
 
 list *list_create(void)
 {
