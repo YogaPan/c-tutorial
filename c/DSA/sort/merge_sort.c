@@ -8,9 +8,7 @@ void merge(int *array, int *left_array, int left_count,
 {
 	int i, j, k;
 
-	i = 0;
-	j = 0;
-	k = 0;
+	i = 0; j = 0; k = 0;
 
 	while (i < left_count && j < right_count) {
 		if (left_array[i] < right_array[j])
