@@ -7,7 +7,7 @@
 	y = __tmp; \
 })
 
-void heapify(int *array, int size, int i)
+static void heapify(int *array, int size, int i)
 {
 	int root  = i;
 	int left  = 2 * i + 1;
@@ -35,26 +35,4 @@ void heap_sort(int *array, int size)
 		swap(array[0], array[i]);
 		heapify(array, i, 0);
 	}
-}
-
-int main(void)
-{
-	int i;
-	int array[ARRAY_SIZE];
-	FILE *fp;
-
-	fp = fopen(RANDOM_FILE, "r");
-
-	for (i = 0; i < ARRAY_SIZE; i++)
-		fscanf(fp, "%d", &array[i]);
-
-	heap_sort(array, ARRAY_SIZE);
-
-	for (i = 0; i < ARRAY_SIZE; i++)
-		printf("%d ", array[i]);
-	printf("\n");
-
-	fclose(fp);
-
-	return 0;
 }
