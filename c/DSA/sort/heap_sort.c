@@ -7,8 +7,6 @@
 	y = __tmp; \
 })
 
-#define ARRAY_SIZE 10
-
 void heapify(int *array, int size, int i)
 {
 	int root  = i;
@@ -42,13 +40,21 @@ void heap_sort(int *array, int size)
 int main(void)
 {
 	int i;
-	int array[ARRAY_SIZE] = { 12, 42, 90, 77, 51, 11, 60, 52, 42, 28 };
+	int array[ARRAY_SIZE];
+	FILE *fp;
+
+	fp = fopen(RANDOM_FILE, "r");
+
+	for (i = 0; i < ARRAY_SIZE; i++)
+		fscanf(fp, "%d", &array[i]);
 
 	heap_sort(array, ARRAY_SIZE);
 
 	for (i = 0; i < ARRAY_SIZE; i++)
 		printf("%d ", array[i]);
 	printf("\n");
+
+	fclose(fp);
 
 	return 0;
 }

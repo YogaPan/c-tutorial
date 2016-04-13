@@ -25,4 +25,6 @@ autotools/**/Makefile
 *.log
 *.status
 *.cache/
+__pycache__/
 *.m4
+*.pyc

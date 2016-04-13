@@ -3,8 +3,6 @@
 #define FALSE 0
 #define TRUE 1
 
-#define ARRAY_SIZE 10
-
 #define swap(x, y) \
 ({ \
 	typeof(x) __tmp = (x); \
@@ -12,7 +10,7 @@
 	(y) = __tmp; \
 })
 
-static void bubble_sort(int *arr, int size)
+static void bubble_sort(int *array, int size)
 {
 	int i, j;
 	int flags = TRUE;
@@ -20,8 +18,8 @@ static void bubble_sort(int *arr, int size)
 	for (i = 0; i < size - 1 && flags; i++) {
 		for (j = 0; j < size - i - 1; j++) {
 			flags = FALSE;
-			if (arr[j] > arr[j+1]) {
-				swap(arr[j], arr[j+1]);
+			if (array[j] > array[j+1]) {
+				swap(array[j], array[j+1]);
 				flags = TRUE;
 			}
 		}
@@ -31,13 +29,21 @@ static void bubble_sort(int *arr, int size)
 int main(void)
 {
 	int i;
-	int arr[ARRAY_SIZE] = { 7, 2, 4, 2, 64, 42, 1, 54, 4, 1 };
+	int array[ARRAY_SIZE];
+	FILE *fp;
 
-	bubble_sort(arr, ARRAY_SIZE);
+	fp = fopen(RANDOM_FILE, "r");
 
 	for (i = 0; i < ARRAY_SIZE; i++)
-		printf("%d ", arr[i]);
+		fscanf(fp, "%d", &array[i]);
+
+	bubble_sort(array, ARRAY_SIZE);
+
+	for (i = 0; i < ARRAY_SIZE; i++)
+		printf("%d ", array[i]);
 	printf("\n");
+
+	fclose(fp);
 
 	return 0;
 }

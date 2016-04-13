@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ARRAY_SIZE 10
-
 void merge(int *array, int *left_array, int left_count,
 		int *right_array, int right_count)
 {
@@ -51,13 +49,21 @@ void merge_sort(int *array, int size)
 int main(void)
 {
 	int i;
-	int array[ARRAY_SIZE] = { 32, 14, 61, 12, 53, 22, 91, 0, 77, 11 };
+	int array[ARRAY_SIZE];
+	FILE *fp;
+
+	fp = fopen(RANDOM_FILE, "r");
+
+	for (i = 0; i < ARRAY_SIZE; i++)
+		fscanf(fp, "%d", &array[i]);
 
 	merge_sort(array, ARRAY_SIZE);
 
 	for (i = 0; i < ARRAY_SIZE; i++)
 		printf("%d ", array[i]);
 	printf("\n");
+
+	fclose(fp);
 
 	return 0;
 }
