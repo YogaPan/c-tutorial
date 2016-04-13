@@ -19,8 +19,8 @@ def main():
     with open('./selection_sort.txt', 'r') as f:
         for line in f:
             temp = line.split()
-            data_list.append(int(temp[0]))
-            time_list.append(int(temp[2]))
+            data_list.append(float(temp[0]))
+            time_list.append(float(temp[2]))
 
     plt.plot(data_list, time_list, 'g-', label='Selection Sort')
 
@@ -30,8 +30,8 @@ def main():
     with open('./bubble_sort.txt', 'r') as f:
         for line in f:
             temp = line.split()
-            data_list.append(int(temp[0]))
-            time_list.append(int(temp[2]))
+            data_list.append(float(temp[0]))
+            time_list.append(float(temp[2]))
 
     plt.plot(data_list, time_list, 'b-', label='Bubble Sort')
 
@@ -41,8 +41,8 @@ def main():
     with open('./heap_sort.txt', 'r') as f:
         for line in f:
             temp = line.split()
-            data_list.append(int(temp[0]))
-            time_list.append(int(temp[2]))
+            data_list.append(float(temp[0]))
+            time_list.append(float(temp[2]))
 
     plt.plot(data_list, time_list, 'c-', label='Heap Sort')
 
@@ -52,8 +52,8 @@ def main():
     with open('./merge_sort.txt', 'r') as f:
         for line in f:
             temp = line.split()
-            data_list.append(int(temp[0]))
-            time_list.append(int(temp[2]))
+            data_list.append(float(temp[0]))
+            time_list.append(float(temp[2]))
 
     plt.plot(data_list, time_list, 'y-', label='Merge Sort')
 
@@ -63,8 +63,8 @@ def main():
     with open('./quick_sort.txt', 'r') as f:
         for line in f:
             temp = line.split()
-            data_list.append(int(temp[0]))
-            time_list.append(int(temp[2]))
+            data_list.append(float(temp[0]))
+            time_list.append(float(temp[2]))
 
     plt.plot(data_list, time_list, 'k-', label='Quick Sort')
 
