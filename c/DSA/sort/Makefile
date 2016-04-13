@@ -23,4 +23,4 @@ plot:
 	python3 ./scripts/plot.py
 
 clean:
-	rm -rf $(EXECUTABLES) random.txt
+	rm -rf *.txt

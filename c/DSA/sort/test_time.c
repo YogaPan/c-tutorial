@@ -68,7 +68,7 @@ int main(void)
 		bubble_sort(array, i);
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = diff_in_second(start, end);
-		fprintf(write_fp, "data %5d: %f seconds", i, diff);
+		fprintf(write_fp, "%5d data: %f seconds", i, diff);
 		rewind(read_fp);
 	}
 	/* heap sort */
@@ -81,7 +81,7 @@ int main(void)
 		heap_sort(array, i);
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = diff_in_second(start, end);
-		fprintf(write_fp, "data %5d: %f seconds", i, diff);
+		fprintf(write_fp, "%5d data: %f seconds", i, diff);
 		rewind(read_fp);
 	}
 	/* merge sort */
@@ -94,7 +94,7 @@ int main(void)
 		merge_sort(array, i);
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = diff_in_second(start, end);
-		fprintf(write_fp, "data %5d: %f seconds", i, diff);
+		fprintf(write_fp, "%5d data: %f seconds", i, diff);
 		rewind(read_fp);
 	}
 	/* quick sort */
@@ -107,7 +107,7 @@ int main(void)
 		quick_sort(array, 0, i-1);
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = diff_in_second(start, end);
-		fprintf(write_fp, "data %5d: %f seconds", i, diff);
+		fprintf(write_fp, "%5d data: %f seconds", i, diff);
 		rewind(read_fp);
 	}
 
