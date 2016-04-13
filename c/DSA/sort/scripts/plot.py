@@ -73,7 +73,7 @@ def main():
 
     plt.plot(data_list, time_list, 'k-', label='Quick Sort')
 
-    plt.legend()
+    plt.legend(loc=2,prop={'size': 12})
     plt.savefig('sort.png')
 
 if __name__ == '__main__':
