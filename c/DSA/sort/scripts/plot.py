@@ -2,6 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
+    plt.title('Sort Speed Compare')
+    plt.xlabel('Data')
+    plt.ylabel('Time')
+    plt.axis([0, 5000, 0, 0.04])
+
     # insertion sort
     data_list = []
     time_list = []

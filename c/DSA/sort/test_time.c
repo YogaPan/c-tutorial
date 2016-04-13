@@ -35,7 +35,7 @@ int main(void)
 	/* insertion sort */
 	printf("insertion sort\n");
 	write_fp = fopen("./insertion_sort.txt", "w");
-	for (i = 500; i < ARRAY_SIZE; i += 500) {
+	for (i = 100; i < ARRAY_SIZE; i += 500) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -48,7 +48,7 @@ int main(void)
 	/* selection sort */
 	printf("selection sort\n");
 	write_fp = fopen("./selection_sort.txt", "w");
-	for (i = 500; i < ARRAY_SIZE; i += 500) {
+	for (i = 100; i < ARRAY_SIZE; i += 500) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -61,7 +61,7 @@ int main(void)
 	/* bubble sort */
 	printf("bubble sort\n");
 	write_fp = fopen("./bubble_sort.txt", "w");
-	for (i = 500; i < ARRAY_SIZE; i += 500) {
+	for (i = 100; i < ARRAY_SIZE; i += 500) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -74,7 +74,7 @@ int main(void)
 	/* heap sort */
 	printf("heap sort\n");
 	write_fp = fopen("./heap_sort.txt", "w");
-	for (i = 500; i < ARRAY_SIZE; i += 500) {
+	for (i = 100; i < ARRAY_SIZE; i += 500) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -87,7 +87,7 @@ int main(void)
 	/* merge sort */
 	printf("merge sort\n");
 	write_fp = fopen("./merge_sort.txt", "w");
-	for (i = 500; i < ARRAY_SIZE; i += 500) {
+	for (i = 100; i < ARRAY_SIZE; i += 500) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -100,7 +100,7 @@ int main(void)
 	/* quick sort */
 	printf("quick sort\n");
 	write_fp = fopen("./quick_sort.txt", "w");
-	for (i = 500; i < ARRAY_SIZE; i += 500) {
+	for (i = 100; i < ARRAY_SIZE; i += 500) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
