@@ -27,7 +27,7 @@ int main(void)
 	struct timespec start, end;
 	FILE *read_fp, *write_fp;
 	int array[ARRAY_SIZE];
-	int i, j
+	int i, j;
 	double diff;
 
 	read_fp = fopen(RANDOM_FILE, "r");

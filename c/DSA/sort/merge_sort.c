@@ -45,25 +45,3 @@ void merge_sort(int *array, int size)
 	free(left_array);
 	free(right_array);
 }
-
-int main(void)
-{
-	int i;
-	int array[ARRAY_SIZE];
-	FILE *fp;
-
-	fp = fopen(RANDOM_FILE, "r");
-
-	for (i = 0; i < ARRAY_SIZE; i++)
-		fscanf(fp, "%d", &array[i]);
-
-	merge_sort(array, ARRAY_SIZE);
-
-	for (i = 0; i < ARRAY_SIZE; i++)
-		printf("%d ", array[i]);
-	printf("\n");
-
-	fclose(fp);
-
-	return 0;
-}
