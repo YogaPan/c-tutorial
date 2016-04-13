@@ -24,7 +24,7 @@ How to create a numpy array and some basic attributes:
         >>> b = a.copy()
         array([1, 2, 3, 4])
 
-        >>> a = np.arrange(15).reshape(3, 5)
+        >>> a = np.arange(15).reshape(3, 5)
         array([[ 0,  1,  2,  3,  4 ],
                [ 5,  6,  7,  8,  9 ],
                [10, 11, 12, 13, 14]])
@@ -166,11 +166,33 @@ Import matplotlib:
 Basic usage:
 
         plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+        plt.show()  # plt.savefig('test.png')
+
+Set labels:
+
         plt.title('test')
         plt.ylabel('age')
         plt.xlabel('person')
         plt.grid(True)
-        plt.savefig('test.png')
+
+
+properties:
+
+        -       line
+        --      dash line
+        s       squar
+        o       point
+        ^       triangle
+
+        r       Red
+        g       Green
+        b       Blue
+
+        plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
+
+        lines = plt.plot(t1, t2)
+        plt.setp(lines, color='r', linewidth=2.0)
+
 
 Link:
         - http://www.cnblogs.com/wei-li/archive/2012/05/23/2506940.html
