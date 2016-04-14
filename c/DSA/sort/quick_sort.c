@@ -7,7 +7,7 @@
 	(y) = __tmp; \
 })
 
-void quick_sort(int *array, int left, int right)
+static void _quick_sort(int *array, int left, int right)
 {
 	int i = left;
 	int j = right + 1;
@@ -22,7 +22,12 @@ void quick_sort(int *array, int left, int right)
 				swap(array[i], array[j]);
 		}
 		swap(array[left], array[j]);
-		quick_sort(array, left, j-1);
-		quick_sort(array, j+1, right);
+		_quick_sort(array, left, j - 1);
+		_quick_sort(array, j + 1, right);
 	}
+}
+
+void quick_sort(int *array, int size)
+{
+	_quick_sort(array, 0, size - 1);
 }

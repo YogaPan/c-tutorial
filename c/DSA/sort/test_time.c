@@ -6,7 +6,7 @@ void selection_sort(int *array, int size);
 void bubble_sort(int *array, int size);
 void heap_sort(int *array, int size);
 void merge_sort(int *array, int size);
-void quick_sort(int *array, int left, int right);
+void quick_sort(int *array, int size);
 
 double diff_in_second(struct timespec start, struct timespec end)
 {
@@ -104,7 +104,7 @@ int main(void)
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
-		quick_sort(array, 0, i-1);
+		quick_sort(array, i);
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = diff_in_second(start, end);
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
