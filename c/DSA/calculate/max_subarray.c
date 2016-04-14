@@ -7,6 +7,7 @@ static inline int max(int x, int y)
 	return x > y ? x : y;
 }
 
+/* Kadane's algorithm */
 int max_subarray(int *array, int size)
 {
 	int i;
