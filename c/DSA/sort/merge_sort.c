@@ -30,7 +30,7 @@ void merge_sort(int *array, int size)
 
 	mid = size / 2;
 
-	left_array = malloc(sizeof(*left_array) * mid);
+	left_array  = malloc(sizeof(*left_array) * mid);
 	right_array = malloc(sizeof(*right_array) * (size - mid));
 
 	for (i = 0; i < mid; i++)
