@@ -2,9 +2,9 @@
 
 #define swap(x, y) \
 ({ \
-	typeof(x) __tmp = x; \
-	x = y; \
-	y = __tmp; \
+	typeof(x) __tmp = (x); \
+	(x) = (y); \
+	(y) = __tmp; \
 })
 
 void selection_sort(int *array, int size)

@@ -2,9 +2,9 @@
 
 #define swap(x, y) \
 ({ \
-	typeof(x) __tmp = x; \
-	x = y; \
-	y = __tmp; \
+	typeof(x) __tmp = (x); \
+	(x) = (y); \
+	(y) = __tmp; \
 })
 
 static void heapify(int *array, int size, int i)

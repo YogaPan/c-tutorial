@@ -14,8 +14,8 @@ static void _quick_sort(int *array, int left, int right)
 
 	if (left < right) {
 		for (;;) {
-			while (i + 1 < ARRAY_SIZE && array[++i] < array[left]);
-			while (j - 1 > -1 && array[--j] > array[left]);
+			while (i + 1 <= right && array[++i] < array[left]);
+			while (j - 1 >= left  && array[--j] > array[left]);
 			if (i >= j)
 				break;
 			else
