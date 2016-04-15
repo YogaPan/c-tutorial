@@ -1,4 +1,4 @@
-Link:
+Good Website:
         - https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95
         - http://taop.marchtea.com/index.html
         - https://github.com/julycoding/The-Art-Of-Programming-By-July
@@ -17,6 +17,13 @@ Pointer Basic Concept:
 Function call Concept:
         - https://www.youtube.com/watch?v=beqqGIdabrE&nohtml5=False
         - https://www.youtube.com/watch?v=VrrnjYgDBEk
+
+Algorithm Analisys:
+        - http://raytaylorlin.com/tech/algorithm/asymptotic-analysis/
+
+Master theorem:
+        - http://raytaylorlin.com/Tech/algorithm/master-method/
+        - http://mropengate.blogspot.tw/2015/04/algorithm-ch1-master-theorem-super.html
 
 Selction Sort:
         - https://www.youtube.com/watch?v=f8hXR_Hvybo&nohtml5=False
@@ -85,6 +92,7 @@ Levenshtein Distance:
 
 kmp algorithm:
         - https://www.youtube.com/watch?v=5i7oKodCRJo
+        - https://www.youtube.com/watch?v=GTJr8OvyEVQ
         - https://www.youtube.com/watch?v=KG44VoDtsAA
 
 Huffman Coding:
