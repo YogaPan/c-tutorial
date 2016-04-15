@@ -14,6 +14,7 @@ netstat
 sudo netstat -p
 sudo netstat -lptu | grep :http
 sudo netstat -lptun | grep :80
+sudo netstat -an | grep EST    # Check who connected to you
 sudo lsof -i :80
 ```
 
