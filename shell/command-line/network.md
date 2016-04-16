@@ -165,10 +165,21 @@ https://www.linode.com/docs/websites/nginx/how-to-configure-nginx
 ## FTP
 
 /etc/vsftpd.conf
+```conf
+pasv_min_port=50000
+pasv_max_port=60000
+```
 ```sh
 
-$ ftp localhost 21
 $ sudo restart vsftpd
+
+$ ftp localhost 21
+> ls
+> get
+> put
+> mget *
+
+$ wget -r ftp://user:pass@server.com/
 
 ```
 
