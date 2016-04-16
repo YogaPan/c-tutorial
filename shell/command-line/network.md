@@ -30,6 +30,8 @@ sudo iptables -A INPUT -j REJECT
 sudo iptables -I INPUT -i lo -j ACCEPT
 sudo iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
+sudo iptables -I INPUT -p tcp -s 10.10.188.233 --dport 80 -j ACCEPT
+
 # Enable apt-get
 sudo iptables -F OUTPUT  # remove your existing OUTPUT rule which becomes redundant
 sudo iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
