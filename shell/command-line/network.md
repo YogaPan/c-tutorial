@@ -138,3 +138,37 @@ curl www.example.com -o filename
 http www.examle.com
 http -d www.example.com
 ```
+
+## Apache2
+
+All your web page in /var/www/html
+```sh
+sudo service apache2 status
+sudo service apache2 start
+sudo service apache2 stop
+sudo service apache2 restart
+```
+
+## Nginx
+
+All your web page in /usr/share/nginx/html  
+/etc/nginx/nginx.conf
+```sh
+sudo service nginx status
+sudo service nginx start
+sudo service nginx stop
+sudo service nginx restart
+```
+
+https://www.linode.com/docs/websites/nginx/how-to-configure-nginx
+
+## FTP
+
+/etc/vsftpd.conf
+```sh
+
+$ ftp localhost 21
+$ sudo restart vsftpd
+
+```
+
