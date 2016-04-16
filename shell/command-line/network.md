@@ -14,8 +14,27 @@ netstat
 sudo netstat -p
 sudo netstat -lptu | grep :http
 sudo netstat -lptun | grep :80
+
+sudo netstat -lntp
+sudo netstat -luntp
+
 sudo netstat -an | grep EST    # Check who connected to you
 sudo lsof -i :80
+```
+
+# iptables
+```sh
+sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -j REJECT
+
+# Enable apt-get
+iptables -F OUTPUT  # remove your existing OUTPUT rule which becomes redundant
+iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 80 -m state --state NEW -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 53 -m state --state NEW -j ACCEPT
+iptables -A OUTPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
+
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 ```
 
 ## Ping
