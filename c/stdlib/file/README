@@ -111,3 +111,7 @@ meet '\n' charactor. if you want to print message immediately, use fflush:
 
 If no fflush, program will print nothing to console before wake up.
 
+1.5 tutorial video
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- https://www.youtube.com/watch?v=QOD2hHiHpn0
