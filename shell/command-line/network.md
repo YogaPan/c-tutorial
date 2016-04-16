@@ -27,14 +27,25 @@ sudo lsof -i :80
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -A INPUT -j REJECT
 
-# Enable apt-get
-iptables -F OUTPUT  # remove your existing OUTPUT rule which becomes redundant
-iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 80 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 53 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
+sudo iptables -I INPUT -i lo -j ACCEPT
+sudo iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
-iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+# Enable apt-get
+sudo iptables -F OUTPUT  # remove your existing OUTPUT rule which becomes redundant
+sudo iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 80 -m state --state NEW -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 53 -m state --state NEW -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
+```
+
+## nmap
+```sh
+sudo nmap -sS -p 1-10000 localhost
+```
+
+## ab
+```
+ab -n 10000 -c 140 http://localhost:8080/
 ```
 
 ## Ping
