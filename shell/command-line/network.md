@@ -43,7 +43,16 @@ sysctl -a | grep ip_forward
 sudo iptables -t nat -A POSTROUTING -s 10.10.177.0/24 -j SNAT --to 10.10.188.232
 sudo iptables -t nat -nL
 netstat -rn
-route add -net 10.10.188.0/24 gw 10.10.177.232 dev eth0
+sduo route add -net 10.10.188.0/24 gw 10.10.177.232 dev eth0
+
+sudo iptables -t nat -A INPUT PREROUTING -d 10.10.188.232 -p tcp --dport 80 -j DNAT
+--to 10.10.177.233:80
+
+sudo iptables -I INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above
+100 -j REJECT
+
+sudo iptables -A INPUT -p icmp -m limit --limit 1/m --limit-burst 10 -j ACCEPT
+sudo iptables -A INPUT -p icmp -j DROP
 
 # Enable apt-get
 sudo iptables -F OUTPUT  # remove your existing OUTPUT rule which becomes redundant
@@ -195,4 +204,3 @@ $ ftp localhost 21
 $ wget -r ftp://user:pass@server.com/
 
 ```
-
