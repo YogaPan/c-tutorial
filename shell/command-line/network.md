@@ -20,6 +20,9 @@ sudo netstat -lntp
 sudo netstat -luntp
 
 sudo netstat -an | grep EST    # Check who connected to you
+
+netstat -rn
+
 sudo lsof -i :80
 ```
 
@@ -32,6 +35,15 @@ sudo iptables -I INPUT -i lo -j ACCEPT
 sudo iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 sudo iptables -I INPUT -p tcp -s 10.10.188.233 --dport 80 -j ACCEPT
+
+
+sudo vim /etc/sysctl.conf # Set net.ipv4.ip_forward = 1
+sysctl -p
+sysctl -a | grep ip_forward
+sudo iptables -t nat -A POSTROUTING -s 10.10.177.0/24 -j SNAT --to 10.10.188.232
+sudo iptables -t nat -nL
+netstat -rn
+route add -net 10.10.188.0/24 gw 10.10.177.232 dev eth0
 
 # Enable apt-get
 sudo iptables -F OUTPUT  # remove your existing OUTPUT rule which becomes redundant
