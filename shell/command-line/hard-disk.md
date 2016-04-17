@@ -45,3 +45,8 @@ dd if=/dev/random of=/dev/sda
 dd if=/dev/zero of=file_1GB bs=1024 count=1000000
 mkfs.ext3 /dev/sda
 ```
+
+## lsblk
+```sh
+lsblk
+```
