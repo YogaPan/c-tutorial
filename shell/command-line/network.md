@@ -6,6 +6,7 @@ ifconfig
 
 # Check IP address
 ifconfig | grep inet
+ip addr
 ```
 ## Check open port
 
