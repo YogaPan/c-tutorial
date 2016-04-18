@@ -23,6 +23,15 @@ double diff_in_second(struct timespec start, struct timespec end)
 	return (diff.tv_sec + diff.tv_nsec / 1000000000.0); 
 }
 
+void print_array(int *array, int size)
+{
+	int i;
+
+	for (i = 0; i < ARRAY_SIZE; i++)
+		printf("%d ", array[i]);
+	printf("\n");
+}
+
 int main(void)
 {
 	struct timespec start, end;
@@ -36,7 +45,7 @@ int main(void)
 	/* insertion sort */
 	printf("insertion sort\n");
 	write_fp = fopen("./insertion_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 500) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -46,10 +55,12 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
+
 	/* selection sort */
 	printf("selection sort\n");
 	write_fp = fopen("./selection_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 250) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -59,10 +70,12 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
+
 	/* bubble sort */
 	printf("bubble sort\n");
 	write_fp = fopen("./bubble_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 250) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -72,10 +85,12 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
+
 	/* heap sort */
 	printf("heap sort\n");
 	write_fp = fopen("./heap_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 250) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -85,10 +100,12 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
+
 	/* merge sort */
 	printf("merge sort\n");
 	write_fp = fopen("./merge_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 250) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -98,10 +115,12 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
+
 	/* quick sort */
 	printf("quick sort\n");
 	write_fp = fopen("./quick_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 250) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -111,10 +130,12 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
+
 	/* radix sort */
 	printf("radix sort\n");
 	write_fp = fopen("./radix_sort.txt", "w");
-	for (i = 100; i < ARRAY_SIZE; i += 250) {
+	for (i = 0; i <= ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);
 		clock_gettime(CLOCK_REALTIME, &start);
@@ -124,6 +145,7 @@ int main(void)
 		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
 		rewind(read_fp);
 	}
+	/* print_array(array, ARRAY_SIZE); */
 
 	fclose(read_fp);
 
