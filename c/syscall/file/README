@@ -50,6 +50,7 @@ Close file:
 
 	close(fd);
 
+
 1.2 Read and write to file descriptor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -73,6 +74,11 @@ Usage example:
 	chdir("the other directory");
 	fchdir(cwd_fd);
 	close(cwd_fd);
+
+Create direct:
+
+        #include <sys/stat.h>
+        int mkdir(const char *pathname, mode_t mode);
 
 Include library:
 

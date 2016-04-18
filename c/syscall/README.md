@@ -30,42 +30,7 @@ dup2(int fildes, int fildes2);
 int
 pipe(int pipefd[2]);
 
-int
-close(int fildes);
-
 ```
-
-## Directory
-```C
-#include <unistd.h>
-
-char *
-getcwd(char *buf, size_t size);
-
-int
-rmdir(const char *pathname);
-
-int
-chdir(const char *path);
-
-int
-fchdir(int fildes);
-
-/* Usage example */
-cwd_fd = open('.', O_RDONLY);
-chdir("the other directory");
-fchdir(cwd_fd);
-close(cwd_fd);
-
-```
-
-```C
-#include <sys/stat.h>
-
-int
-mkdir(const char *pathname, mode_t mode);
-```
-
 ## Link
 ```C
 #include <unistd.h>
