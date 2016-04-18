@@ -1,50 +1,5 @@
 # Unix System Call
 
-## Open file
-```C
-#include <fctnl.h>
-
-int
-open(const char *path, int flag, mode_t mode);
-
-/* creat(path, mode) is the same as open(path, O_CREAT | O_TRUNC | O_WRONLY, mode) */
-int
-creat(const char *path, mode_t mode);
-
-/* flag options */
-O_RDONLY    /* Read only */
-O_WRONLY    /* Write only */
-O_RDWR      /* Read and Write */
-
-O_CREAT     /* If not exists, then create file */
-O_APPEND    /* Append */
-O_TRUNC     /* If file existed, then replace this file. */
-
-/* mode macros */
-S_ISUID     /* 04000 */
-S_ISGID     /* 02000 */
-S_ISVTX     /* 01000 sticky */
-
-S_IRWXU     /* 00700 */
-    S_IRUSR /* 00400 */
-    S_IWUSR /* 00200 */
-    S_IXUSR /* 00100 */
-
-S_IRWXG     /* 00070 */
-    S_IRGRP /* 00040 */
-    S_IWGRP /* 00020 */
-    S_IXGRP /* 00010 */
-
-S_IRWXO     /* 00007 */
-    S_IROTH /* 00004 */
-    S_IWOTH /* 00002 */
-    S_IXOTH /* 00001 */
-
-/* Usage example */
-fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH );
-fd = creat(filename, 0755);
-```
-
 ## Read, write, redirect and close file
 ```C
 #include <unistd.h>
