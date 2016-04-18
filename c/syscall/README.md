@@ -111,34 +111,6 @@ int
 mkdir(const char *pathname, mode_t mode);
 ```
 
-```C
-#include <dirent.h>
-
-struct dirent {
-        ino_t d_ino;
-        char d_name[255+1];
-}
-
-DIR *
-opendir(const char *filename);
-
-struct dirent *
-readdir(DIR *dirp);
-
-int
-closedir(DIR *dirp);
-
-/* Usage example */
-DIR *dir = opendir('path');
-if (dir) {
-        struct dirent *entry;
-        while ((entry = readdir(dir)) != NULL)
-                printf("%s\n", entry->d_name);
-        closedir(dir);
-}
-
-```
-
 ## Link
 ```C
 #include <unistd.h>
