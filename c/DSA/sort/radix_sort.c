@@ -3,12 +3,10 @@
 #include <string.h>
 
 #define swap(x, y) do { \
-	typeof(x) __tmp = x; \
-	x = y; \
-	y = __tmp; \
+	typeof(x) __tmp = (x); \
+	(x) = (y); \
+	(y) = __tmp; \
 } while (0)
-
-#define ARRAY_SIZE 10
 
 static int find_largest(int *array, int size)
 {
@@ -53,17 +51,4 @@ void radix_sort(int *array, int size)
 	}
 
 	free(semi_sorted);
-}
-
-int main(void)
-{
-	int i;
-	int array[ARRAY_SIZE] = { 43, 14, 0, 11, 41, 77, 99, 51, 33, 95 };
-
-	radix_sort(array, ARRAY_SIZE);
-	for (i = 0; i < ARRAY_SIZE; i++)
-		printf("%d ", array[i]);
-	printf("\n");
-
-	return 0;
 }

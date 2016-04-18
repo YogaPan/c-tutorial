@@ -7,6 +7,7 @@ void bubble_sort(int *array, int size);
 void heap_sort(int *array, int size);
 void merge_sort(int *array, int size);
 void quick_sort(int *array, int size);
+void radix_sort(int *array, int size);
 
 double diff_in_second(struct timespec start, struct timespec end)
 {
@@ -100,6 +101,19 @@ int main(void)
 	/* quick sort */
 	printf("quick sort\n");
 	write_fp = fopen("./quick_sort.txt", "w");
+	for (i = 100; i < ARRAY_SIZE; i += 250) {
+		for (j = 0; j < i; j++)
+			fscanf(read_fp, "%d", &array[j]);
+		clock_gettime(CLOCK_REALTIME, &start);
+		quick_sort(array, i);
+		clock_gettime(CLOCK_REALTIME, &end);
+		diff = diff_in_second(start, end);
+		fprintf(write_fp, "%5d data: %f seconds\n", i, diff);
+		rewind(read_fp);
+	}
+	/* radix sort */
+	printf("radix sort\n");
+	write_fp = fopen("./radix_sort.txt", "w");
 	for (i = 100; i < ARRAY_SIZE; i += 250) {
 		for (j = 0; j < i; j++)
 			fscanf(read_fp, "%d", &array[j]);

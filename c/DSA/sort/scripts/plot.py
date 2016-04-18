@@ -73,6 +73,17 @@ def main():
 
     plt.plot(data_list, time_list, 'k-', label='Quick Sort')
 
+    # radix sort
+    data_list = []
+    time_list = []
+    with open('./radix_sort.txt', 'r') as f:
+        for line in f:
+            temp = line.split()
+            data_list.append(float(temp[0]))
+            time_list.append(float(temp[2]))
+
+    plt.plot(data_list, time_list, 'm-', label='radix Sort')
+
     plt.legend(loc=2,prop={'size': 12})
     plt.savefig('sort.png')
 
