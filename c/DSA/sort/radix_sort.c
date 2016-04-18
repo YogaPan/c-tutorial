@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define swap(x, y) do { \
-	typeof(x) __tmp = (x); \
-	(x) = (y); \
-	(y) = __tmp; \
-} while (0)
-
 static int find_largest(int *array, int size)
 {
 	int i;
