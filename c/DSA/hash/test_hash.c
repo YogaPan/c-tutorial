@@ -31,7 +31,7 @@ int main(void)
 
 	fp = fopen(DICT_FILE, "r");
 
-	for (i = 1; i <= 100000; i *= 10) {
+	for (i = 1; i <= 32768; i *= 2) {
 		dict = dict_init(i);
 
 		while (fscanf(fp, "%s", buffer) != EOF)
