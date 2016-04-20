@@ -21,83 +21,51 @@ static double diff_in_second(struct timespec t1, struct timespec t2)
 	return (diff.tv_sec + diff.tv_nsec / 1000000000.0);
 }
 
-static void slow(FILE *fp)
-{
-	struct dict *dict;
-	struct timespec start, end;
-	double diff;
-
-	dict = dict_init(10);
-
-	while (fscanf(fp, "%s", buffer) != EOF)
-		dict_add(dict, buffer, NULL);
-
-	clock_gettime(CLOCK_REALTIME, &start);
-
-	if (dict_search(dict, "yoga"))
-		printf("yoga found\n");
-	else
-		printf("yoga not found\n");
-	if (dict_search(dict, "james"))
-		printf("james found\n");
-	else
-		printf("james not found\n");
-	if (dict_search(dict, "curry"))
-		printf("curry found\n");
-	else
-		printf("curry not found\n");
-
-	clock_gettime(CLOCK_REALTIME, &end);
-		
-	dict_destroy(dict);
-
-	diff = diff_in_second(start, end);
-	printf("\n%f seconds\n\n", diff);
-}
-
-static void fast(FILE *fp)
-{
-	struct dict *dict;
-	struct timespec start, end;
-	double diff;
-
-	dict = dict_init(1000);
-
-	while (fscanf(fp, "%s", buffer) != EOF)
-		dict_add(dict, buffer, NULL);
-
-	clock_gettime(CLOCK_REALTIME, &start);
-
-	if (dict_search(dict, "yoga"))
-		printf("yoga found\n");
-	else
-		printf("yoga not found\n");
-	if (dict_search(dict, "james"))
-		printf("james found\n");
-	else
-		printf("james not found\n");
-	if (dict_search(dict, "curry"))
-		printf("curry found\n");
-	else
-		printf("curry not found\n");
-
-	clock_gettime(CLOCK_REALTIME, &end);
-		
-	dict_destroy(dict);
-
-	diff = diff_in_second(start, end);
-	printf("\n%f seconds\n\n", diff);
-}
-
 int main(void)
 {
+	int i;
+	double diff;
 	FILE *fp;
+	struct dict *dict;
+	struct timespec start, end;
 
 	fp = fopen(DICT_FILE, "r");
 
-	slow(fp);
-	rewind(fp);
-	fast(fp);
+	for (i = 1; i <= 100000; i *= 10) {
+		dict = dict_init(i);
+
+		while (fscanf(fp, "%s", buffer) != EOF)
+			dict_add(dict, buffer, NULL);
+
+		clock_gettime(CLOCK_REALTIME, &start);
+
+		/*
+		if (dict_search(dict, "yoga"))
+			printf("yoga found\n");
+		else
+			printf("yoga not found\n");
+		if (dict_search(dict, "james"))
+			printf("james found\n");
+		else
+			printf("james not found\n");
+		if (dict_search(dict, "curry"))
+			printf("curry found\n");
+		else
+			printf("curry not found\n");
+		*/
+		dict_search(dict, "curry");
+		dict_search(dict, "yoga");
+		dict_search(dict, "james");
+
+		clock_gettime(CLOCK_REALTIME, &end);
+
+		dict_destroy(dict);
+
+		diff = diff_in_second(start, end);
+		printf("%d bucket size: %f seconds\n", i,  diff);
+
+		rewind(fp);
+	}
 
 	fclose(fp);
 

@@ -58,6 +58,36 @@ void dict_add(struct dict *self, const char *key, const void *value)
 	self->count++;
 }
 
+void dict_delete(struct dict *self, const char *key)
+{
+	int n;
+	struct entry *prev, *curr;
+
+	n = hash(key, self->size);
+
+	curr = self->table[n];
+	if (curr != NULL) {
+		if (strcasecmp(curr->key, key) == 0) {
+			self->table[n] = curr->next;
+			free(curr);
+			return;
+		}
+	}
+
+	prev = NULL;
+	curr = curr->next;
+	while (curr != NULL) {
+		if (strcasecmp(curr->key, key) == 0) {
+			prev->next = curr->next;
+			free(curr);
+			return;
+		}
+
+		prev = curr;
+		curr = curr->next;
+	}
+}
+
 int dict_search(struct dict *self, const char *key)
 {
 	int n;

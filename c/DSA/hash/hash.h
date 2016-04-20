@@ -15,6 +15,7 @@ struct dict {
 
 struct dict *dict_init(int size);
 void dict_add(struct dict *self, const char *key, const void *value);
+void dict_delete(struct dict *self, const char *key);
 int dict_search(struct dict *self, const char *key);
 void dict_destroy(struct dict *self);
 
