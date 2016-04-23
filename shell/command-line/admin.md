@@ -18,7 +18,8 @@ apt --installed list
 ## Shutdown
 ```sh
 sudo shutdown -h now  # Halt now
-sudo shutdown -r +5   # Reboot 5 minutes later
+sudo shutdown -r +5 "Server will reboot 5 minutes later"
+sudo shutdown -c      # Cancel shutdown
 ```
 
 ## User
