@@ -1,14 +1,18 @@
-CC = gcc
-CFLAGS = -Wall
-LDFLAGS = -pthread
+ifeq ($(lock),true)
+	CFLAGS := -Wall -std=gnu99 -DUSE_LOCK
+else
+	CFLAGS := -Wall -std=gnu99 
+endif
+CC := gcc
+LDFLAGS := -pthread
+EXEC := $(basename $(wildcard *.c))
 
-EXECUTABLES = $(basename $(wildcard *.c))
 .PHONY: all clean
 
-all: $(EXECUTABLES)
+all: $(EXEC)
 
 tags:
 	ctags -R *
 
 clean:
-	rm -rf $(EXECUTABLES)
+	rm -rf $(EXEC)

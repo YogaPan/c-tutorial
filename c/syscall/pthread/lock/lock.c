@@ -2,10 +2,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-/* you can just comment this line and see what will happen. */
-#define USE_MUTEX
-
-#ifdef USE_MUTEX
+#ifdef USE_LOCK
 static pthread_mutex_t lock;
 #endif
 static int number;
@@ -14,7 +11,7 @@ static void *producer(void *param)
 {
 	int i;
 
-#ifdef USE_MUTEX
+#ifdef USE_LOCK
 	pthread_mutex_lock(&lock);
 #endif
 	printf("I'm in critical\n");
@@ -22,7 +19,7 @@ static void *producer(void *param)
 		number++;
 	printf("I'm out\n");
 
-#ifdef USE_MUTEX
+#ifdef USE_LOCK
 	pthread_mutex_unlock(&lock);
 #endif
 	pthread_exit(NULL);
@@ -32,14 +29,14 @@ static void *consumer(void *param)
 {
 	int i;
 
-#ifdef USE_MUTEX
+#ifdef USE_LOCK
 	pthread_mutex_lock(&lock);
 #endif
 	printf("I'm in critical\n");
 	for (i = 0; i < 1000000; i++)
 		number--;
 	printf("I'm out\n");
-#ifdef USE_MUTEX
+#ifdef USE_LOCK
 	pthread_mutex_unlock(&lock);
 #endif
 	pthread_exit(NULL);
@@ -49,7 +46,7 @@ int main(void)
 {
 	pthread_t producer_tid, consumer_tid;
 
-#ifdef USE_MUTEX
+#ifdef USE_LOCK
 	pthread_mutex_init(&lock, NULL);
 #endif
 
