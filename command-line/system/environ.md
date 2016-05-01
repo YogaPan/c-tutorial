@@ -55,6 +55,11 @@ PAGER
 alias vim="mvim"
 ```
 
+## Test command
+```
+command -v
+```
+
 ## Color
 
 ```sh
