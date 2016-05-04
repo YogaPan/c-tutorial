@@ -1,16 +1,16 @@
 def logger(func):
-    def wrapper():
+    def wrapper(*args, **kwargs):
         print('start')
-        func()
+        func(*args, **kwargs)
         print('stop')
     return wrapper
 
 @logger
-def say():
-    print('fuck')
+def say(word):
+    print(word)
 
 def main():
-    say()
+    say('fuck')
 
 if __name__ == '__main__':
     main()
