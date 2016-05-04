@@ -64,3 +64,7 @@ m = hashlib.md5()
 m.update(SALT + word.decode('ascii'))
 m.hexdigest()
 ```
+
+### decorator
+- http://www.imooc.com/article/1257
+- http://ot-note.logdown.com/posts/67571/-decorator-with-without-arguments-in-function-class-form
