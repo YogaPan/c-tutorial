@@ -1,6 +1,6 @@
 CC      := gcc
-CFLAGS  := -std=gnu99 -Wall -pthread
-LDFLAGS :=
+CFLAGS  := -std=gnu99 -Wall
+LDFLAGS := -pthread
 OBJS    := async.o async_test.o
 
 all: async_test
