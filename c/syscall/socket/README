@@ -145,7 +145,7 @@ After get the sockfd and free addrinfo, you can send and recieve message:
 	len = strlen(msg);
 
 	while (bytes < len) {
-		ret = send(sockfd, msg+bytes, 1024-bytes, 0);
+		ret = send(sockfd, msg+bytes, len-bytes, 0);
 		if (ret == -1)
 			perror("send");
 		bytes += ret;
@@ -153,9 +153,14 @@ After get the sockfd and free addrinfo, you can send and recieve message:
 
 	for (;;) {
 		ret = recv(sockfd, msg, 1024, 0);
-		if (ret == -1)
+		if (ret == -1) {
 			perror("recv");
-		bytes += ret;
+		} else if (ret == 0) {
+			break;
+		} else {
+			buf[ret] = '\0';
+			printf("%s", buf);
+		}
 	}
 
 Close socket:
