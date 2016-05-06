@@ -3,9 +3,9 @@ CFLAGS  = -Wall -std=gnu99
 LDFLAGS = -pthread
 OBJS    = $(patsubst %.o,%.c,$(wildcard *.c))
 
-all: requests
+all: get
 
-requests: $(OBJS)
+get: $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 %.o: %.c
@@ -13,6 +13,3 @@ requests: $(OBJS)
 
 tags:
 	ctags -R *
-
-clean:
-	rm -rf $(OBJS)
