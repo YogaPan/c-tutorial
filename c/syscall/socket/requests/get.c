@@ -109,12 +109,13 @@ static int send_message(int sockfd, const char *message)
 		if (ret == -1) {
 			perror("recv");
 			return -1;
-		} else if (ret == 0) {
-			break;
-		} else {
+		}
+		if (ret != 0) {
 			buf[ret] = '\0';
 			printf("%s", buf);
+			continue;
 		}
+		break;
 	}
 
 	return 0;
