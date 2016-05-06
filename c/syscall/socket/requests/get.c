@@ -10,18 +10,18 @@
 #define BUFFER_SIZE 1024
 #define HEADER_SIZE 1024
 
-static void header_init(char *header, const char *host, const char *path)
+static void inline header_init(char *header, const char *host, const char *path)
 {
 	snprintf(header, HEADER_SIZE, "GET %s HTTP/1.1\r\nHost: %s\r\n", path, host);
 }
 
-static void header_write(char *header, const char *line)
+static inline void header_write(char *header, const char *line)
 {
 	int len = strlen(header);
 	snprintf(header+len, HEADER_SIZE-len, "%s\r\n", line);
 }
 
-static void header_end(char *header)
+static void inline header_end(char *header)
 {
 	strncat(header, "\r\n", HEADER_SIZE);
 }
@@ -78,6 +78,7 @@ static int get_socket(const char *url, const char *port)
 		ipver = "Ipv6";
 	}
 
+	inet_ntop(p->ai_family, addr, ipstr, sizeof(ipstr));
 	printf("%s: %s\n\n", ipver, ipstr);
 
 	freeaddrinfo(res);
