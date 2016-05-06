@@ -23,7 +23,8 @@ static inline void header_write(char *header, const char *line)
 
 static void inline header_end(char *header)
 {
-	strncat(header, "\r\n", HEADER_SIZE);
+	int len = strlen(header);
+	snprintf(header+len, HEADER_SIZE-len, "\r\n");
 }
 
 static int get_socket(const char *url, const char *port)

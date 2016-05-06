@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -Wall
+CFLAGS  = -Wall -O2
 LDFLAGS = -pthread
 OBJS    = $(patsubst %.o,%.c,$(wildcard *.c))
 
