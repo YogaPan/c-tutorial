@@ -106,7 +106,7 @@ static int send_message(int sockfd, const char *message)
 	}
 
 	for (;;) {
-		ret = recv(sockfd, buf, BUFFER_SIZE, 0);
+		ret = recv(sockfd, buf, BUFFER_SIZE-1, 0);
 		if (ret == -1) {
 			perror("recv");
 			return -1;

@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -Wall -O2
+CFLAGS  = -Wall -std=gnu99 -O2
 LDFLAGS = -pthread
 OBJS    = $(patsubst %.o,%.c,$(wildcard *.c))
 
@@ -13,3 +13,6 @@ get: $(OBJS)
 
 tags:
 	ctags -R *
+
+clean:
+	rm -rf get
