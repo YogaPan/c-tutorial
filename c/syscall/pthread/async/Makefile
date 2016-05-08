@@ -1,15 +1,16 @@
 CC      := gcc
 CFLAGS  := -std=gnu99 -Wall
-LDFLAGS := -pthread
+LDFLAGS :=
 OBJS    := async.o async_test.o
+EXEC    := async_test
 
-all: async_test
+all: $(EXEC)
 
-async_test: $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+$(EXEC): $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 %.o: %.c
-	$(CC) $(CLAGS) -c $^
+	$(CC) $(CFLAGS) -c $^
 
 clean:
-	rm -rf $(OBJS) async_test
+	rm -rf $(OBJS) $(EXEC)
