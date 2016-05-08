@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <dirent.h>
 #include <sys/stat.h>
 #include <pwd.h>
 #include <grp.h>
 
 static inline void show_inode(struct stat *s)
 {
-	printf("%lld ", s->st_ino);
+	printf("%-10lld ", s->st_ino);
 }
 
 static void show_user(struct stat *s)
@@ -15,10 +16,10 @@ static void show_user(struct stat *s)
 	struct group  *group;
 
 	user = getpwuid(s->st_uid);
-	printf("%s ", user->pw_name);
+	printf("%10s ", user->pw_name);
 
 	group = getgrgid(s->st_gid);
-	printf("%s ", group->gr_name);
+	printf("%7s ", group->gr_name);
 }
 
 static void show_mode(struct stat *s)
@@ -85,9 +86,31 @@ static int show_stat(const char *path)
 	}
 
 	show_inode(&s);
-	show_user(&s);
 	show_mode(&s);
-	printf("\n\n");
+	show_user(&s);
+	printf(" %s\n", path);
+
+	return 0;
+}
+
+static int list_file(const char *path)
+{
+	DIR *dir;
+	struct dirent *entry;
+
+	dir = opendir(path);
+	if (dir == NULL) {
+		perror("opendir");
+		return -1;
+	}
+
+	entry = readdir(dir);
+	while (entry != NULL) {
+		show_stat(entry->d_name);
+		entry = readdir(dir);
+	}
+
+	closedir(dir);
 
 	return 0;
 }
@@ -96,7 +119,7 @@ int main(int argc, const char *argv[])
 {
 	const char *path = argv[1];
 
-	show_stat(path);
+	list_file(path);
 
 	return 0;
 }
