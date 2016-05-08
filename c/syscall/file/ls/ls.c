@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <pwd.h>
+#include <grp.h>
 
 static inline void show_inode(struct stat *s)
 {
@@ -11,9 +12,13 @@ static inline void show_inode(struct stat *s)
 static void show_user(struct stat *s)
 {
 	struct passwd *user;
+	struct group  *group;
 
 	user = getpwuid(s->st_uid);
 	printf("%s ", user->pw_name);
+
+	group = getgrgid(s->st_gid);
+	printf("%s ", group->gr_name);
 }
 
 static void show_mode(struct stat *s)
@@ -57,7 +62,7 @@ static void show_mode(struct stat *s)
 		printf("w");
 	else
 		printf("-");
-	if (S_IROTH & s->st_mode)
+	if (S_IXOTH & s->st_mode)
 		printf("x");
 	else
 		printf("-");
