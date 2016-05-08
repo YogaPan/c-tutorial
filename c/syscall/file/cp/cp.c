@@ -126,6 +126,28 @@ static int copy_to_directory(const char *from, const char *dir)
 	return 0;
 }
 
+static int link_file(const char *from, const char *to)
+{
+	int ret;
+
+	if (access(from, F_OK) != 0) {
+		fprintf(stderr, "source file not exists!\n");
+		return -1;
+	}
+	if (access(to, F_OK) == 0) {
+		fprintf(stderr, "destination file alreadt exists!\n");
+		return -1;
+	}
+
+	ret = symlink(from, to);
+	if (ret != 0) {
+		perror("symlink");
+		return -1;
+	}
+
+	return 0;
+}
+
 int main(int argc, const char *argv[])
 {
 	if (strcmp(argv[1], "-d") == 0) {
@@ -134,7 +156,10 @@ int main(int argc, const char *argv[])
 
 		copy_to_directory(from, dir);
 	} else if (strcmp(argv[1], "-s") == 0) {
-		/* TODO */
+		const char *from = argv[2];
+		const char *to   = argv[3];
+
+		link_file(from, to);
 	} else {
 		const char *from = argv[1];
 		const char *to   = argv[2];
