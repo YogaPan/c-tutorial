@@ -1,7 +1,7 @@
 CC := gcc
 CFLAGS := -Wall -std=gnu99 -O2
 LDFLAGS :=
-EXEC := tcp
+EXEC := cp
 
 all: $(EXEC)
 
