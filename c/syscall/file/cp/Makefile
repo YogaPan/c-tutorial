@@ -5,7 +5,7 @@ EXEC := tcp
 
 all: $(EXEC)
 
-$(EXEC):
+$(EXEC): cp.c
 	$(CC) $(CFLAGS) $^ -o $@ $(CFLAGS)
 
 clean:
