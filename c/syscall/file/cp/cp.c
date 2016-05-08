@@ -17,8 +17,6 @@ static int copy(int read_fd, int write_fd)
 		ret = read(read_fd, buf, BUFFER_SIZE);
 		if (ret == -1) {
 			perror("read");
-			close(read_fd);
-			close(write_fd);
 			return -1;
 		} else if (ret == 0) {
 			break;
@@ -29,8 +27,6 @@ static int copy(int read_fd, int write_fd)
 		ret = write(write_fd, buf, bytes);
 		if (ret == -1) {
 			perror("write");
-			close(read_fd);
-			close(write_fd);
 			return -1;
 		}
 	}
@@ -117,6 +113,7 @@ static int copy_to_directory(const char *from, const char *dir)
 	ret = copy(read_fd, write_fd);
 	if (ret < 0) {
 		close(read_fd);
+		close(write_fd);
 		return -1;
 	}
 
