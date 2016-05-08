@@ -16,8 +16,13 @@ static void show_user(struct stat *s)
 	printf("%s ", user->pw_name);
 }
 
-static void show_permission(struct stat *s)
+static void show_mode(struct stat *s)
 {
+	if (S_ISDIR(s->st_mode))
+		printf("d");
+	else
+		printf("-");
+
 	if (S_IRUSR & s->st_mode)
 		printf("r");
 	else
@@ -76,7 +81,7 @@ static int show_stat(const char *path)
 
 	show_inode(&s);
 	show_user(&s);
-	show_permission(&s);
+	show_mode(&s);
 	printf("\n\n");
 
 	return 0;
