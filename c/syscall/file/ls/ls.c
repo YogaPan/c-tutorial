@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <unistd.h>
 #include <dirent.h>
 #include <sys/stat.h>
@@ -16,10 +17,10 @@ static void show_user(struct stat *s)
 	struct group  *group;
 
 	user = getpwuid(s->st_uid);
-	printf("%10s ", user->pw_name);
+	printf("%-10s ", user->pw_name);
 
 	group = getgrgid(s->st_gid);
-	printf("%7s ", group->gr_name);
+	printf("%-7s ", group->gr_name);
 }
 
 static void show_mode(struct stat *s)
@@ -67,6 +68,34 @@ static void show_mode(struct stat *s)
 		printf("x");
 	else
 		printf("-");
+	printf("  ");
+}
+
+static void show_time(struct stat *s)
+{
+	struct tm *time;
+	char format_time[128];
+
+	time = localtime(&s->st_ctime);
+	strftime(format_time, 128, "%b %d %H:%M", time);
+
+	printf("%-10s", format_time);
+}
+
+static void show_size(struct stat *s)
+{
+	long long size;
+	char format_size[128];
+
+	size = s->st_size;
+
+	if (size < 1024) {
+		snprintf(format_size, 128, "%lldB", s->st_size);
+		printf("%-7s", format_size);
+	} else {
+		snprintf(format_size, 128, "%lldK", s->st_size / 1024);
+		printf("%-7s", format_size);
+	}
 }
 
 static int show_stat(const char *path)
@@ -88,6 +117,8 @@ static int show_stat(const char *path)
 	show_inode(&s);
 	show_mode(&s);
 	show_user(&s);
+	show_size(&s);
+	show_time(&s);
 	printf(" %s\n", path);
 
 	return 0;
@@ -117,9 +148,7 @@ static int list_file(const char *path)
 
 int main(int argc, const char *argv[])
 {
-	const char *path = argv[1];
-
-	list_file(path);
+	list_file(".");
 
 	return 0;
 }
