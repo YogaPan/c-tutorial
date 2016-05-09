@@ -20,10 +20,10 @@ double diff_in_second(struct timespec start, struct timespec end)
 		diff.tv_sec  = end.tv_sec - start.tv_sec;
 		diff.tv_nsec = end.tv_nsec - start.tv_nsec;
 	}
-	return (diff.tv_sec + diff.tv_nsec / 1000000000.0); 
+	return (diff.tv_sec + diff.tv_nsec / 1000000000.0);
 }
 
-void print_array(int *array, int size)
+void print_array(int *array)
 {
 	int i;
 
