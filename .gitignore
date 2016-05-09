@@ -16,6 +16,7 @@ autotools/**/Makefile
 *.swp
 *.o
 *.ko
+*.gch
 *.mod.c
 *.order
 *.symvers
