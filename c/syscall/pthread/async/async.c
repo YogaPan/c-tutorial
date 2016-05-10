@@ -19,8 +19,7 @@ static void *threader(void *args)
 		}
 
 		tmp = self->head;
-		task.func = tmp->func;
-		task.args = tmp->args;
+		task = *tmp;
 
 		if (self->count == 1)
 			self->head = self->tail = NULL;
@@ -56,6 +55,7 @@ struct async *async_create(int thread_num)
 		return NULL;
 
 	self->count = 0;
+	self->shutdown = 0;
 	self->head = self->tail = NULL;
 	self->thread_num = thread_num;
 	self->threads = malloc(sizeof(pthread_t) * thread_num);
@@ -97,9 +97,9 @@ int async_send_task(struct async *self,
 	}
 
 	self->count++;
-	pthread_cond_signal(&self->notify);
-
 	pthread_mutex_unlock(&self->lock);
+
+	pthread_cond_signal(&self->notify);
 
 	return 0;
 }
@@ -109,15 +109,13 @@ void async_wait(struct async *self)
 	int i;
 
 	pthread_mutex_lock(&self->lock);
-
 	self->shutdown = 1;
-	pthread_cond_broadcast(&self->notify);
-
 	pthread_mutex_unlock(&self->lock);
+
+	pthread_cond_broadcast(&self->notify);
 
 	for (i = 0; i < self->thread_num; i++)
 		pthread_join(self->threads[i], NULL);
-
 	async_destroy(self);
 }
 
