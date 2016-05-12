@@ -1,13 +1,13 @@
 CC = gcc
 CFLAGS = -Wall
 
-EXECUTABLES = $(basename $(wildcard *.c))
+EXEC = $(basename $(wildcard *.c))
 .PHONY: all clean
 
-all: $(EXECUTABLES)
+all: $(EXEC)
 
 tags:
 	ctags -R *
 
 clean:
-	rm -rf $(EXECUTABLES)
+	rm -rf $(EXEC)
