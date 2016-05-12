@@ -7,7 +7,7 @@ static int show_status(int fd)
 {
 	int retval;
 
-	retval = fcntl(fd, F_GETFL, 0);
+	retval = fcntl(fd, F_GETFL);
 
 	if (retval < 0) {
 		perror("fcntl");
