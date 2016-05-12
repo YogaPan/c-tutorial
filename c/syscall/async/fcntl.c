@@ -7,8 +7,8 @@ int main(void)
 	int read_fd;
 	int retval;
 
-	read_fd = open("fcntl.c", O_WRONLY);
-	retval = fcntl(read_fd, F_GETFD, 0);
+	read_fd = open("fcntl.c", O_RDONLY);
+	retval = fcntl(read_fd, F_GETFL, 0);
 
 	if (retval < 0) {
 		perror("fcntl");
