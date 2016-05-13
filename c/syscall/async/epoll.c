@@ -87,6 +87,8 @@ int main(void)
 		}
 	}
 
+	delete_event(epollfd, STDIN_FILENO, EPOLLIN);
+
 	close(nfds);
 	close(epollfd);
 

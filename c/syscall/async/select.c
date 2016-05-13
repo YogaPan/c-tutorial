@@ -15,6 +15,7 @@ int main(void)
 	FD_ZERO(&rfds);
 	FD_SET(0, &rfds);
 
+	/* 1 is the maximum fd + 1 */
 	retval = select(1, &rfds, NULL, NULL, &tv);
 	/* Don't rely on the value of tv now! */
 
