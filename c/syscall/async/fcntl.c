@@ -29,6 +29,9 @@ static int show_status(int fd)
 	if (retval & O_APPEND)
 		printf("append\n");
 
+	if (retval & O_NONBLOCK)
+		printf("non blocking\n");
+
 	return retval;
 }
 
@@ -41,7 +44,7 @@ int main(void)
 
 	retval = show_status(read_fd);
 
-	retval = fcntl(read_fd, F_SETFL, retval | O_APPEND);
+	retval = fcntl(read_fd, F_SETFL, retval | O_APPEND | O_NONBLOCK);
 	if (retval < 0) {
 		perror("fcntl");
 		close(read_fd);
