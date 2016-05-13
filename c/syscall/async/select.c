@@ -19,7 +19,7 @@ int main(void)
 	/* Don't rely on the value of tv now! */
 
 	if (retval == -1)
-		perror("select()");
+		perror("select");
 	else if (retval)
 		printf("Data is available now.\n");
 	/* FD_ISSET(0, &rfds) will be true. */
