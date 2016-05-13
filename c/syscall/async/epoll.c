@@ -65,6 +65,8 @@ int main(void)
 	add_event(epollfd, STDIN_FILENO, EPOLLIN);
 
 	for (;;) {
+		printf("loop\n");
+		/* nfds = epoll_wait(epollfd, events, EPOLL_EVENTS, 1000); */
 		nfds = epoll_wait(epollfd, events, EPOLL_EVENTS, -1);
 		if (nfds == -1) {
 			perror("epoll_wait");
