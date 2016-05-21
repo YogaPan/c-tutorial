@@ -164,6 +164,5 @@ int main(int argc, const char *argv[])
 		copy_file(from, to);
 	}
 
-
 	return 0;
 }
