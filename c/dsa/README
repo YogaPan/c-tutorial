@@ -1,4 +1,4 @@
-Good Website:
+Nice Website:
         - https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95
         - http://taop.marchtea.com/index.html
         - https://github.com/julycoding/The-Art-Of-Programming-By-July
@@ -8,9 +8,9 @@ Good Website:
         - http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
         - http://dev.tutorialspoint.com/data_structures_algorithms/index.htm
         - https://gist.github.com/mycodeschool
-
+        - https://www.youtube.com/channel/UCz⋯⋯
 Big-O:
-	- http://bigocheatsheet.com/
+        - http://bigocheatsheet.com/
 
 Pointer Basic Concept:
         - https://www.youtube.com/watch?v=yOdd3uYC--A
@@ -20,13 +20,6 @@ Pointer Basic Concept:
 Function call Concept:
         - https://www.youtube.com/watch?v=beqqGIdabrE&nohtml5=False
         - https://www.youtube.com/watch?v=VrrnjYgDBEk
-
-Algorithm Analisys:
-        - http://raytaylorlin.com/tech/algorithm/asymptotic-analysis/
-
-Master theorem:
-        - http://raytaylorlin.com/Tech/algorithm/master-method/
-        - http://mropengate.blogspot.tw/2015/04/algorithm-ch1-master-theorem-super.html
 
 Selction Sort:
         - https://www.youtube.com/watch?v=f8hXR_Hvybo&nohtml5=False
@@ -48,9 +41,6 @@ Merge Sort:
 Heap Sort:
         - https://www.youtube.com/watch?v=MiyLo8adrWw&nohtml5=False
         - https://www.youtube.com/watch?v=onlhnHpGgC4&nohtml5=False
-
-Radix Sort:
-        - http://austingwalters.com/radix-sort-in-c/
 
 Linked List:
         - https://www.youtube.com/watch?v=ZoG2hOIoTnA&nohtml5=False
@@ -96,16 +86,33 @@ Levenshtein Distance:
         - https://charles620016.hackpad.com/ep/pad/static/Japi4qFyAzt
         - https://www.youtube.com/watch?v=We3YDTzNXEk
 
-kmp algorithm:
-        - https://www.youtube.com/watch?v=5i7oKodCRJo
-        - https://www.youtube.com/watch?v=GTJr8OvyEVQ
-        - https://www.youtube.com/watch?v=KG44VoDtsAA
-
 Huffman Coding:
         - https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81
 
 Dijkstra's Algorithm:
         - https://www.youtube.com/watch?v=5GT5hYzjNoo
+
+Bellman–Ford Algorithm:
+        - https://zh.wikipedia.org/wiki/贝�⋯⋯
+        - https://www.youtube.com/watch?v=iTW⋯⋯
+        - https://www.youtube.com/watch?v=obW⋯⋯
+
+Floyd-Warshall Algorithm:
+        - https://zh.wikipedia.org/wiki/Floyd⋯⋯
+        - https://www.youtube.com/watch?v=KQ9⋯⋯
+
+Topological Sort Algorithm:
+        - https://www.youtube.com/watch?v=ddT⋯⋯
+
+Prim’s Algorithm:
+        - https://www.youtube.com/watch?v=cpl⋯⋯
+
+Kruskal's Algorithm:
+        - https://www.youtube.com/watch?v=71U⋯⋯
+
+Knapsack Problem:
+        - https://www.youtube.com/watch?v=EH6⋯⋯
+        - https://www.youtube.com/watch?v=8Lu⋯⋯
 
 Open Source Project Have Nice Data structure and Algorithm:
         - https://github.com/antirez/redis
